@@ -18,11 +18,11 @@ const mimeTypes = {
 
 http.createServer((req, res) => {
   const urlPath = decodeURIComponent(req.url.split('?')[0]);
-  let filePath;
-  if (urlPath === '/' || urlPath === '/index.html') {
-    filePath = path.join(__dirname, 'index.html');
-  } else {
-    filePath = path.join(__dirname, urlPath);
+  let filePath = path.join(__dirname, urlPath);
+
+  // Serve index.html for directory paths
+  if (urlPath.endsWith('/')) {
+    filePath = path.join(__dirname, urlPath, 'index.html');
   }
 
   const ext = path.extname(filePath);
