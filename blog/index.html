@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Блог | Kailash Dham — Ведические ритуалы</title>
-  <meta name="description" content="Статьи о ведических ритуалах, духовной практике, джйотише и жизненных переходах. Kailash Dham — ашрам и духовный центр.">
+  <title>Блог | Kailash Dham</title>
+  <meta name="description" content="Статьи о ведических ритуалах, духовной практике и жизненных переходах.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://kailashdham.space/blog/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kailashdham.space/blog/">
-  <meta property="og:title" content="Блог Kailash Dham">
+  <meta property="og:title" content="Блог | Kailash Dham">
   <meta property="og:image" content="https://kailashdham.space/images/hero.png">
   <meta property="og:site_name" content="Kailash Dham">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,50 +17,40 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--gold:#c9943a;--gold-lt:#e0b86a;--dark:#0a0806;--w100:#fff;--w70:rgba(255,255,255,.7);--w45:rgba(255,255,255,.45)}
 html,body{background:var(--dark);color:var(--w100);font-family:'Montserrat',sans-serif;line-height:1.8}
-a{color:var(--gold);text-decoration:none}
-a:hover{color:var(--gold-lt)}
-
-.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,8,6,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,148,58,.15);padding:16px 24px;display:flex;align-items:center;gap:16px}
-.site-header .logo{font-family:'Cinzel',serif;font-size:.95rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
-.site-header .back{font-size:.75rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
-.site-header .back:hover{color:var(--gold)}
+a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,8,6,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,148,58,.15);padding:14px 24px;display:flex;align-items:center;gap:14px}
+.site-header .logo{font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
 .site-header .sep{color:var(--w45);font-size:.8rem}
-
-/* ARTICLE HERO */
-.article-hero{position:relative;height:clamp(320px,50vw,560px);background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:0 0 0 0;margin-top:53px}
-.article-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,8,6,.3) 0%, rgba(10,8,6,.5) 50%, rgba(10,8,6,.92) 100%)}
+.site-header .back{font-size:.72rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.site-header .back:hover{color:var(--gold)}
+.lang-sw{margin-left:auto;display:flex;gap:6px}
+.lang-sw button{background:transparent;border:1px solid rgba(201,148,58,.3);color:var(--w45);font-family:'Montserrat',sans-serif;font-size:.68rem;letter-spacing:.08em;padding:4px 9px;cursor:pointer;transition:all .2s;text-transform:uppercase}
+.lang-sw button:hover,.lang-sw button.active{border-color:var(--gold);color:var(--gold)}
+.article-hero{position:relative;height:clamp(320px,50vw,560px);background-size:cover;background-position:center;display:flex;align-items:flex-end;margin-top:53px}
+.article-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,8,6,.25) 0%,rgba(10,8,6,.55) 50%,rgba(10,8,6,.93) 100%)}
 .article-hero-inner{position:relative;z-index:1;width:100%;max-width:740px;margin:0 auto;padding:0 24px 48px}
-.article-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:600;color:var(--w100);line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.6)}
-.article-hero .gold-line{width:48px;height:2px;background:var(--gold);margin-top:20px;opacity:.8}
-
-/* ARTICLE HERO — no image fallback */
+.article-hero-inner h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:600;color:var(--w100);line-height:1.25;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+.gold-line{width:48px;height:2px;background:var(--gold);margin-top:20px;opacity:.8}
 .article-hero-plain{margin-top:53px;background:linear-gradient(160deg,rgba(201,148,58,.12) 0%,rgba(10,8,6,1) 60%);padding:64px 24px 48px}
 .article-hero-plain h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:600;color:var(--gold-lt);line-height:1.25;max-width:740px;margin:0 auto}
-.article-hero-plain .gold-line{width:48px;height:2px;background:var(--gold);margin:20px auto 0 0;max-width:740px;display:block;opacity:.8}
-
-/* BODY */
 .article-wrap{max-width:740px;margin:0 auto;padding:48px 24px 80px}
-.article-wrap h2{font-family:'Cinzel',serif;font-size:clamp(.9rem,2vw,1.05rem);font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin:36px 0 14px}
+.article-wrap h2{font-family:'Cinzel',serif;font-size:clamp(.88rem,2vw,1.02rem);font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin:36px 0 14px}
 .article-wrap p{color:var(--w70);font-size:.97rem;margin-bottom:18px}
 .article-wrap ul{margin:4px 0 20px 20px}
 .article-wrap ul li{color:var(--w70);font-size:.97rem;margin-bottom:8px}
 .article-wrap .copyright{color:var(--w45);font-size:.8rem;margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
-
-/* CTA */
 .cta-block{max-width:740px;margin:0 auto 80px;padding:0 24px}
 .cta-inner{background:linear-gradient(135deg,rgba(201,148,58,.12),rgba(201,148,58,.04));border:1px solid rgba(201,148,58,.3);border-radius:3px;padding:36px;text-align:center}
 .cta-inner h3{font-family:'Cinzel',serif;font-size:1rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
 .cta-inner p{color:var(--w70);font-size:.9rem;margin-bottom:24px}
 .cta-btn{display:inline-block;padding:12px 32px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transition:all .25s}
 .cta-btn:hover{background:var(--gold);color:var(--dark)}
-
-/* BLOG INDEX */
 .blog-hero{text-align:center;padding:120px 24px 48px}
 .blog-hero h1{font-family:'Cinzel',serif;font-size:clamp(1.4rem,4vw,2rem);color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
 .blog-hero p{color:var(--w45);font-size:.9rem;letter-spacing:.06em}
 .divider{width:40px;height:1px;background:var(--gold);margin:0 auto 32px;opacity:.4}
 .blog-grid{max-width:960px;margin:0 auto;padding:0 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px}
-.blog-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,148,58,.2);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s}
+.blog-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,148,58,.2);border-radius:3px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s;cursor:pointer}
 .blog-card:hover{border-color:rgba(201,148,58,.5)}
 .blog-card img{width:100%;height:190px;object-fit:cover;display:block;opacity:.8;transition:opacity .25s}
 .blog-card:hover img{opacity:1}
@@ -73,57 +63,47 @@ a:hover{color:var(--gold-lt)}
 <body>
   <header class="site-header">
     <a href="/" class="logo">Kailash Dham</a>
-    <span class="sep">›</span>
-    <span class="back">Блог</span>
+    <div class="lang-sw">
+      <button data-lang="ru" onclick="renderIndex('ru')">RU</button>
+      <button data-lang="uk" onclick="renderIndex('uk')">UK</button>
+      <button data-lang="en" onclick="renderIndex('en')">EN</button>
+    </div>
   </header>
   <main>
     <div class="blog-hero">
-      <h1>Блог</h1>
+      <h1 id="blogTitle">Блог</h1>
       <div class="divider"></div>
-      <p>Статьи о ведических ритуалах, духовной практике и жизненных переходах</p>
+      <p id="blogDesc"></p>
     </div>
-    <div class="blog-grid">
-      <a href="/blog/pochemu-my-boimsya-smerti.html" class="blog-card">
-        <img src="/blog/images/pochemu-my-boimsya-smerti.jpg" alt="Почему мы боимся смерти и забываем жить" loading="lazy">
-        <div class="blog-card-body">
-          <h2>Почему мы боимся смерти и забываем жить</h2>
-          <p class="excerpt">Есть вещи, о которых человек старается не думать. Он может говорить о планах, работе, деньгах, здоровье, семье, о будущем.</p>
-          <span class="read-more">Читать далее →</span>
-        </div>
-      </a>
-      <a href="/blog/yagya-kak-drevniy-put.html" class="blog-card">
-        <img src="/blog/images/yagya-kak-drevniy-put.jpg" alt="Ягья как древний путь духовной практики" loading="lazy">
-        <div class="blog-card-body">
-          <h2>Ягья как древний путь духовной практики</h2>
-          <p class="excerpt">Ягья - один из древних путей духовной практики, наряду с йогой, медитацией и тантрой. Её глубокий смысл не сводится к исполнению желаний или реализации намерений. В основе ягьи лежит обращение к Высше...</p>
-          <span class="read-more">Читать далее →</span>
-        </div>
-      </a>
-      <a href="/blog/uchitel-uznaetsya-po-plodam.html" class="blog-card">
-        <img src="/blog/images/uchitel-uznaetsya-po-plodam.jpg" alt="Учитель узнаётся по плодам" loading="lazy">
-        <div class="blog-card-body">
-          <h2>Учитель узнаётся по плодам</h2>
-          <p class="excerpt">Иногда человек годами ищет учителя, хотя на самом деле уже боится выбрать. Он слушает одного мастера, потом другого. Читает книги, сравнивает школы, смотрит лекции, ищет знаки, ждёт внутренней уверенн...</p>
-          <span class="read-more">Читать далее →</span>
-        </div>
-      </a>
-      <a href="/blog/kudzha-dosha.html" class="blog-card">
-        <img src="/blog/images/kudzha-dosha.jpg" alt="Куджа-доша у женщин: когда Марс вмешивается в брак" loading="lazy">
-        <div class="blog-card-body">
-          <h2>Куджа-доша у женщин: когда Марс вмешивается в брак</h2>
-          <p class="excerpt">В ведической астрологии есть понятие Куджа-доша, или Манглик-доша. Обычно оно связано с особым положением Марса в карте рождения. В традиции считается, что напряжённый Марс может давать испытания в бр...</p>
-          <span class="read-more">Читать далее →</span>
-        </div>
-      </a>
-      <a href="/blog/pochemu-zhenshchina-ostaetsya-odna.html" class="blog-card">
-        <img src="/blog/images/pochemu-zhenshchina-ostaetsya-odna.jpg" alt="Почему женщина остаётся одна, даже когда очень хочет любви" loading="lazy">
-        <div class="blog-card-body">
-          <h2>Почему женщина остаётся одна, даже когда очень хочет любви</h2>
-          <p class="excerpt">Скажи честно - ты правда хочешь просто найти мужчину? Или ты хочешь наконец оказаться рядом с тем, с кем можно выдохнуть?</p>
-          <span class="read-more">Читать далее →</span>
-        </div>
-      </a>
-    </div>
+    <div class="blog-grid" id="blogGrid"></div>
   </main>
+  <script>
+const _cards = [{"slug": "pochemu-my-boimsya-smerti", "titles": {"ru": "Почему мы боимся смерти и забываем жить", "uk": "Чому ми боїмося смерті і забуваємо жити", "en": "Why do we fear death and forget to live?"}, "excerpts": {"ru": "Есть вещи, о которых человек старается не думать. Он может говорить о планах, работе, деньгах, здоровье, семье, о будущем.", "uk": "Є речі, про які людина намагається не думати. Він може говорити про плани, роботу, гроші, здоров'я, сім'ю, про майбутнє.", "en": "There are things that a person tries not to think about. He can talk about plans, work, money, health, family, and the future."}, "has_img": true}, {"slug": "yagya-kak-drevniy-put", "titles": {"ru": "Ягья как древний путь духовной практики", "uk": "Ягця як давній шлях духовної практики", "en": "Yagya as an ancient path of spiritual practice"}, "excerpts": {"ru": "Ягья - один из древних путей духовной практики, наряду с йогой, медитацией и тантрой. Её глубокий смысл не сводится к исполнению желаний или реализации намерений. В основе ягьи лежит обращение к Высше...", "uk": "Ягья - одне із древніх шляхів духовної практики, поруч із йогою, медитацією і тантрою. Її глибоке значення не зводиться до виконання бажань чи реалізації намірів. В основі яг'ї лежить звернення до Вищ...", "en": "Yagya is one of the ancient paths of spiritual practice, along with yoga, meditation and tantra. Its deep meaning is not limited to the fulfillment of desires or the realization of intentions. The bas..."}, "has_img": true}, {"slug": "uchitel-uznaetsya-po-plodam", "titles": {"ru": "Учитель узнаётся по плодам", "uk": "Вчитель дізнається з плодів", "en": "A teacher is recognized by his fruits"}, "excerpts": {"ru": "Иногда человек годами ищет учителя, хотя на самом деле уже боится выбрать. Он слушает одного мастера, потом другого. Читает книги, сравнивает школы, смотрит лекции, ищет знаки, ждёт внутренней уверенн...", "uk": "Іноді людина роками шукає вчителя, хоч насправді вже боїться вибрати. Він слухає одного майстра, потім іншого. Читає книги, порівнює школи, дивиться лекції, шукає знаки, чекає на внутрішню впевненість...", "en": "Sometimes a person has been looking for a teacher for years, although in reality he is already afraid to choose. He listens to one master, then another. Reads books, compares schools, watches lectures..."}, "has_img": true}, {"slug": "kudzha-dosha", "titles": {"ru": "Куджа-доша у женщин: когда Марс вмешивается в брак", "uk": "Куджа-доша у жінок: коли Марс втручається у шлюб", "en": "Kuja dosha in women: when Mars interferes in marriage"}, "excerpts": {"ru": "В ведической астрологии есть понятие Куджа-доша, или Манглик-доша. Обычно оно связано с особым положением Марса в карте рождения. В традиции считается, что напряжённый Марс может давать испытания в бр...", "uk": "У ведичній астрології є поняття Куджа-доша, або Манглік-доша. Зазвичай воно пов'язане з особливим становищем Марса у карті народження. У традиції вважається, що напружений Марс може давати випробуванн...", "en": "In Vedic astrology there is the concept of Kuja dosha, or Manglik dosha. It is usually associated with the special position of Mars in the birth chart. In tradition, it is believed that tense Mars can..."}, "has_img": true}, {"slug": "pochemu-zhenshchina-ostaetsya-odna", "titles": {"ru": "Почему женщина остаётся одна, даже когда очень хочет любви", "uk": "Чому жінка залишається одна, навіть коли дуже хоче кохання", "en": "Why does a woman remain alone even when she really wants love?"}, "excerpts": {"ru": "Скажи честно - ты правда хочешь просто найти мужчину? Или ты хочешь наконец оказаться рядом с тем, с кем можно выдохнуть?", "uk": "Скажи чесно – ти справді хочеш просто знайти чоловіка? Чи ти хочеш нарешті опинитися поруч із тим, з ким можна видихнути?", "en": "Tell me honestly - do you really just want to find a man? Or do you want to finally be next to someone with whom you can breathe out?"}, "has_img": true}];
+const _ui    = {"ru": {"blog": "Блог", "home": "Главная", "cta_h": "Готовы к ритуалу?", "cta_p": "Яг'я, Пуджа, Тарпана и другие ведические практики — для ключевых переходов вашей жизни", "cta_btn": "Узнать подробнее", "read_more": "Читать далее →", "blog_title": "Блог", "blog_desc": "Статьи о ведических ритуалах, духовной практике и жизненных переходах"}, "uk": {"blog": "Блог", "home": "Головна", "cta_h": "Готові до ритуалу?", "cta_p": "Яг'я, Пуджа, Тарпана та інші ведичні практики — для ключових переходів вашого життя", "cta_btn": "Дізнатися більше", "read_more": "Читати далі →", "blog_title": "Блог", "blog_desc": "Статті про ведичні ритуали, духовну практику та життєві переходи"}, "en": {"blog": "Blog", "home": "Home", "cta_h": "Ready for a ritual?", "cta_p": "Yagya, Puja, Tarpana and other Vedic practices — for the key transitions of your life", "cta_btn": "Learn more", "read_more": "Read more →", "blog_title": "Blog", "blog_desc": "Articles on Vedic rituals, spiritual practice and life transitions"}};
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function renderIndex(lang){
+  document.getElementById('blogTitle').textContent = _ui[lang].blog_title;
+  document.getElementById('blogDesc').textContent  = _ui[lang].blog_desc;
+  const grid = document.getElementById('blogGrid');
+  grid.innerHTML = _cards.map(c => {
+    const img = c.has_img ? `<img src="/blog/images/${c.slug}.jpg" alt="${esc(c.titles[lang])}" loading="lazy">` : '';
+    return `<a href="/blog/${c.slug}.html" class="blog-card">
+      ${img}
+      <div class="blog-card-body">
+        <h2>${esc(c.titles[lang])}</h2>
+        <p class="excerpt">${esc(c.excerpts[lang])}</p>
+        <span class="read-more">${esc(_ui[lang].read_more)}</span>
+      </div>
+    </a>`;
+  }).join('');
+  document.querySelectorAll('.lang-sw button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.documentElement.lang = lang === 'uk' ? 'uk' : lang === 'en' ? 'en' : 'ru';
+  localStorage.setItem('kd_lang', lang);
+}
+
+(function(){ renderIndex(localStorage.getItem('kd_lang') || 'ru'); })();
+</script>
 </body>
 </html>
