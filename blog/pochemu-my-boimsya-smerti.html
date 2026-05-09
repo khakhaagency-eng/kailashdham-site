@@ -84,7 +84,7 @@ a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
       <button data-lang="en" onclick="setLang('en')">EN</button>
     </div>
   </header>
-  <div class="article-hero" style="background-image:url('/blog/images/pochemu-my-boimsya-smerti.jpg')"><div class="article-hero-inner"><h1 id="artTitle"></h1><div class="gold-line"></div></div></div>
+  <div class="article-hero" id="heroImg" style="background-image:url('/blog/images/pochemu-my-boimsya-smerti.jpg')"><div class="article-hero-inner"><h1 id="artTitle"></h1><div class="gold-line"></div></div></div>
   <main>
     <div class="article-wrap"><div id="artBody"></div></div>
     <div class="cta-block">
@@ -134,6 +134,8 @@ function setLang(lang){
   document.documentElement.lang=lang==='uk'?'uk':lang==='en'?'en':'ru';
   document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
   localStorage.setItem('kd_lang',lang);
+  const _heroImgs={ru:'/blog/images/pochemu-my-boimsya-smerti.jpg',uk:'/blog/images/pochemu-my-boimsya-smerti-uk.jpg',en:'/blog/images/pochemu-my-boimsya-smerti-en.jpg'};
+  const heroEl=document.getElementById('heroImg');if(heroEl)heroEl.style.backgroundImage="url('"+(_heroImgs[lang]||_heroImgs.ru)+"')";
 }
 
 (function(){setLang(localStorage.getItem('kd_lang')||'ru');})();
