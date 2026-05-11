@@ -29,11 +29,16 @@ http.createServer((req, res) => {
   const contentType = mimeTypes[ext] || 'application/octet-stream';
 
   fs.readFile(filePath, (err, data) => {
-    if (err) {
-      res.writeHead(404);
-      res.end('Not found');
+    if (err && !path.extname(filePath)) {
+      // Try adding .html extension
+      fs.readFile(filePath + '.html', (err2, data2) => {
+        if (err2) { res.writeHead(404); res.end('Not found'); return; }
+        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+        res.end(data2);
+      });
       return;
     }
+    if (err) { res.writeHead(404); res.end('Not found'); return; }
     res.writeHead(200, { 'Content-Type': contentType });
     res.end(data);
   });
