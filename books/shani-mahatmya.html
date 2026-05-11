@@ -46,15 +46,16 @@
     html,body{background:var(--dark);color:var(--w100);font-family:'Montserrat',sans-serif;line-height:1.8}
     a{color:var(--gold);text-decoration:none}
     a:hover{color:var(--gold-lt)}
-    .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,8,6,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,148,58,.15);padding:14px 24px;display:flex;align-items:center;gap:14px}
-    .logo{font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+    .site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,8,6,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,148,58,.15);padding:12px 16px;display:flex;align-items:center;gap:10px}
+    .logo{font-family:'Cinzel',serif;font-size:.85rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
     .sep{color:var(--w45);font-size:.8rem}
-    .nav-back{font-size:.72rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+    .nav-back{font-size:.7rem;color:var(--w45);letter-spacing:.06em;text-transform:uppercase;transition:color .2s;white-space:nowrap}
     .nav-back:hover{color:var(--gold)}
-    .lang-sw{margin-left:auto;display:flex;gap:6px}
-    .lang-sw button{background:none;border:1px solid rgba(201,148,58,.4);color:var(--gold);padding:4px 10px;cursor:pointer;font-size:.72rem;letter-spacing:.1em;transition:all .2s}
+    .lang-sw{margin-left:auto;display:flex;gap:5px;flex-shrink:0}
+    .lang-sw button{background:none;border:1px solid rgba(201,148,58,.4);color:var(--gold);padding:3px 8px;cursor:pointer;font-size:.68rem;letter-spacing:.08em;transition:all .2s}
     .lang-sw button.active,.lang-sw button:hover{background:var(--gold);color:var(--dark)}
-    .hero{margin-top:53px;padding:64px 24px 56px;background:linear-gradient(160deg,rgba(201,148,58,.1) 0%,rgba(10,8,6,1) 55%);border-bottom:1px solid rgba(201,148,58,.15)}
+    @media(max-width:480px){.sep,.nav-back{display:none}}
+    .hero{margin-top:49px;padding:40px 24px 36px;background:linear-gradient(160deg,rgba(201,148,58,.1) 0%,rgba(10,8,6,1) 55%);border-bottom:1px solid rgba(201,148,58,.15)}
     .hero-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
     .book-cover{width:100%;border-radius:2px;box-shadow:0 20px 60px rgba(0,0,0,.7),0 0 0 1px rgba(201,148,58,.2);display:block}
     .book-label{font-size:.7rem;color:var(--gold);letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px;display:block}
@@ -69,7 +70,7 @@
     .author-line{font-size:.8rem;color:var(--w45);margin-top:16px}
     .author-line span{color:var(--w70)}
     @media(max-width:700px){.hero-inner{grid-template-columns:1fr;gap:32px}.book-cover{max-width:260px;margin:0 auto;display:block}}
-    .section{max-width:960px;margin:0 auto;padding:64px 24px}
+    .section{max-width:960px;margin:0 auto;padding:40px 24px}
     .section-title{font-family:'Cinzel',serif;font-size:clamp(.9rem,2vw,1.05rem);color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:32px}
     .toc{list-style:none;border-left:2px solid rgba(201,148,58,.3);padding-left:24px}
     .toc li{color:var(--w70);font-size:.95rem;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px}
@@ -121,6 +122,8 @@
           <button class="btn-buy" id="btnBuy">Купить книгу</button>
         </div>
         <p class="author-line"><span id="authorLabel">Автор</span>: <span id="authorName">Дмитрий Дьяченко</span></p>
+        <p class="author-line" style="margin-top:6px"><span id="cityYear">Киев — 2016</span></p>
+        <p class="author-line" style="margin-top:4px"><span id="langLabel">Язык издания</span>: <span id="langValue">Русский</span></p>
       </div>
     </div>
   </section>
@@ -195,7 +198,10 @@ const _ui = {
     cta_p: '«Шани Махатмья. Несравненное Величие Сатурна» — редкое издание о силе Шанидева, пути через испытания и обретении Его Милости.',
     page_title: 'Шани Махатмья — Несравненное Величие Сатурна | Kailash Dham',
     meta_desc: 'История о Саде-сати короля Викрамадитьи, 108 имён Шани, Наваграха стотра, беседа с Пайлотом Бабой. Автор: Дмитрий Дьяченко.',
-    author_name: 'Дмитрий Дьяченко'
+    author_name: 'Дмитрий Дьяченко',
+    city_year: 'Киев — 2016',
+    lang_label: 'Язык издания',
+    lang_value: 'Русский'
   },
   uk: {
     nav_back: 'Головна',
@@ -225,7 +231,10 @@ const _ui = {
     cta_p: '«Шані Махатм\'я. Незрівнянна Велич Сатурна» — рідкісне видання про силу Шанідєва, шляхи через випробування та здобуття Його Милості.',
     page_title: 'Шані Махатм\'я — Незрівнянна Велич Сатурна | Kailash Dham',
     meta_desc: 'Історія про Саді-саті короля Вікрамадітья, 108 імен Шані, Наваграха стотра, бесіда з Пайлотом Бабою. Автор: Дмитро Дяченко.',
-    author_name: 'Дмитро Дьяченко'
+    author_name: 'Дмитро Дьяченко',
+    city_year: 'Київ — 2016',
+    lang_label: 'Мова видання',
+    lang_value: 'Російська'
   },
   en: {
     nav_back: 'Home',
@@ -255,7 +264,10 @@ const _ui = {
     cta_p: '“Shani Mahatmya. The Incomparable Greatness of Saturn" is a rare publication about the power of Shanidev, the path through trials and the acquisition of His Grace.',
     page_title: 'Shani Mahatmya — The Incomparable Greatness of Saturn | Kailash Dham',
     meta_desc: 'The story of King Vikramaditya\'s Sada-sati, 108 names of Shani, Navagraha Stotra, conversation with Pilot Baba. Author: Dmitry Dyachenko.',
-    author_name: 'Dmytro Diachenko'
+    author_name: 'Dmytro Diachenko',
+    city_year: 'Kyiv — 2016',
+    lang_label: 'Language',
+    lang_value: 'Russian'
   }
 };
 
@@ -307,6 +319,9 @@ function setLang(lang) {
   document.getElementById('btnBuy2').textContent = u.btn_buy;
   document.getElementById('authorLabel').textContent = u.author_label;
   document.getElementById('authorName').textContent = u.author_name;
+  document.getElementById('cityYear').textContent = u.city_year;
+  document.getElementById('langLabel').textContent = u.lang_label;
+  document.getElementById('langValue').textContent = u.lang_value;
   document.getElementById('tocTitle').textContent = u.toc_title;
   document.getElementById('galleryTitle').textContent = u.gallery_title;
   document.getElementById('creditsTitle').textContent = u.credits_title;
