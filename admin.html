@@ -248,7 +248,7 @@ function renderTable() {
               <td>${r.nakshatra || '—'}</td>
               <td class="wrap">${r.sankalpa || '—'}</td>
               <td>${r.phone || '—'}</td>
-              <td>${r.photo_file_id ? '✅' : '—'}</td>
+              <td>${r.photo_url ? `<a href="${r.photo_url}" target="_blank"><img src="${r.photo_url}" style="width:48px;height:48px;object-fit:cover;border-radius:6px;display:block"></a>` : '—'}</td>
             </tr>`).join('')}
           </tbody>
         </table>
