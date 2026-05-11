@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Kailashdham</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; min-height: 100vh; }
+
+  /* Login */
+  #login-screen { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .login-box { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 40px; width: 340px; }
+  .login-box h1 { font-size: 20px; color: #c9a96e; margin-bottom: 24px; text-align: center; }
+  .login-box input { width: 100%; background: #111; border: 1px solid #333; border-radius: 8px; padding: 10px 14px; color: #e0e0e0; font-size: 14px; margin-bottom: 12px; outline: none; }
+  .login-box input:focus { border-color: #c9a96e; }
+  .login-box button { width: 100%; background: #c9a96e; color: #0f0f0f; border: none; border-radius: 8px; padding: 11px; font-size: 14px; font-weight: 600; cursor: pointer; }
+  .login-box button:hover { background: #b8945a; }
+  .login-error { color: #e06060; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
+
+  /* Admin */
+  #admin-screen { display: none; }
+  header { background: #1a1a1a; border-bottom: 1px solid #2a2a2a; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 17px; color: #c9a96e; font-weight: 600; }
+  header button { background: none; border: 1px solid #444; border-radius: 6px; color: #888; padding: 6px 14px; font-size: 13px; cursor: pointer; }
+  header button:hover { color: #e0e0e0; border-color: #666; }
+
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid #2a2a2a; background: #151515; padding: 0 24px; }
+  .tab { padding: 14px 20px; font-size: 14px; color: #888; cursor: pointer; border-bottom: 2px solid transparent; transition: all .2s; }
+  .tab.active { color: #c9a96e; border-bottom-color: #c9a96e; }
+  .tab:hover:not(.active) { color: #ccc; }
+
+  .content { padding: 24px; }
+
+  .stats { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  .stat { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 16px 20px; min-width: 140px; }
+  .stat-val { font-size: 28px; font-weight: 700; color: #c9a96e; }
+  .stat-label { font-size: 12px; color: #666; margin-top: 4px; }
+
+  .toolbar { display: flex; gap: 12px; margin-bottom: 16px; align-items: center; flex-wrap: wrap; }
+  .toolbar input { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 14px; color: #e0e0e0; font-size: 13px; outline: none; width: 220px; }
+  .toolbar input:focus { border-color: #c9a96e; }
+  .toolbar select { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 14px; color: #e0e0e0; font-size: 13px; outline: none; cursor: pointer; }
+  .refresh-btn { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px; padding: 8px 16px; color: #c9a96e; font-size: 13px; cursor: pointer; }
+  .refresh-btn:hover { background: #222; }
+
+  .table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #2a2a2a; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: #1a1a1a; }
+  th { padding: 11px 14px; text-align: left; color: #888; font-weight: 500; white-space: nowrap; border-bottom: 1px solid #2a2a2a; }
+  tbody tr { border-bottom: 1px solid #1e1e1e; transition: background .15s; }
+  tbody tr:hover { background: #181818; }
+  tbody tr:last-child { border-bottom: none; }
+  td { padding: 10px 14px; vertical-align: top; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  td.wrap { white-space: normal; word-break: break-word; }
+
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .badge-group { background: #1e3a2a; color: #5dbb7a; }
+  .badge-individual { background: #1e2e4a; color: #5d9abb; }
+  .badge-horoscope { background: #2e2a1e; color: #c9a96e; }
+  .badge-vip { background: #2e1e2e; color: #c96ec9; }
+  .badge-book { background: #2a1e1e; color: #e07070; }
+
+  .empty { text-align: center; padding: 60px 20px; color: #444; }
+  .loading { text-align: center; padding: 60px 20px; color: #666; }
+
+  .tg-link { color: #5d9abb; text-decoration: none; }
+  .tg-link:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<!-- Login -->
+<div id="login-screen">
+  <div class="login-box">
+    <h1>Kailashdham Admin</h1>
+    <input type="text" id="login-user" placeholder="Логин" autocomplete="off">
+    <input type="password" id="login-pass" placeholder="Пароль">
+    <button onclick="doLogin()">Войти</button>
+    <div class="login-error" id="login-error">Неверный логин или пароль</div>
+  </div>
+</div>
+
+<!-- Admin -->
+<div id="admin-screen">
+  <header>
+    <h1>Kailashdham Admin</h1>
+    <button onclick="doLogout()">Выйти</button>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab('orders')">Заявки бота</div>
+    <div class="tab" onclick="switchTab('books')">Покупки книги</div>
+  </div>
+
+  <div class="content">
+    <!-- Stats -->
+    <div class="stats" id="stats"></div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <input type="text" id="search" placeholder="Поиск по имени, телефону..." oninput="renderTable()">
+      <select id="filter-pkg" onchange="renderTable()">
+        <option value="">Все пакеты</option>
+        <option value="pkg_group">Групповая</option>
+        <option value="pkg_individual">Индивидуальная</option>
+        <option value="pkg_horoscope">С гороскопом</option>
+        <option value="pkg_vip">VIP</option>
+      </select>
+      <button class="refresh-btn" onclick="loadData()">↻ Обновить</button>
+    </div>
+
+    <div id="table-container"><div class="loading">Загрузка...</div></div>
+  </div>
+</div>
+
+<script>
+const SUPABASE_URL = 'https://gbnrmuhqcqdoevjrvlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_r8uVLfoEO5gbuFEIhEyuGQ_lheUtZEJ';
+
+let currentTab = 'orders';
+let allData = [];
+
+// ── Auth ─────────────────────────────────────────────────────────────────────
+function doLogin() {
+  const u = document.getElementById('login-user').value.trim();
+  const p = document.getElementById('login-pass').value.trim();
+  if (u === 'admin' && p === 'admin') {
+    sessionStorage.setItem('kd_admin', '1');
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-screen').style.display = 'block';
+    loadData();
+  } else {
+    document.getElementById('login-error').style.display = 'block';
+  }
+}
+
+function doLogout() {
+  sessionStorage.removeItem('kd_admin');
+  location.reload();
+}
+
+document.getElementById('login-pass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+if (sessionStorage.getItem('kd_admin')) {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('admin-screen').style.display = 'block';
+}
+
+// ── Tabs ─────────────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  currentTab = tab;
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', (i === 0 && tab === 'orders') || (i === 1 && tab === 'books'));
+  });
+  const pkgFilter = document.getElementById('filter-pkg');
+  pkgFilter.style.display = tab === 'orders' ? '' : 'none';
+  loadData();
+}
+
+// ── Data ─────────────────────────────────────────────────────────────────────
+async function loadData() {
+  document.getElementById('table-container').innerHTML = '<div class="loading">Загрузка...</div>';
+  const table = currentTab === 'orders' ? 'kailashdham_orders' : 'book_orders';
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${table}?select=*&order=created_at.desc&limit=500`, {
+      headers: { apikey: SUPABASE_KEY, Authorization: `Bearer ${SUPABASE_KEY}` }
+    });
+    if (!res.ok) throw new Error(await res.text());
+    allData = await res.json();
+    renderStats();
+    renderTable();
+  } catch (e) {
+    document.getElementById('table-container').innerHTML = `<div class="empty">Ошибка загрузки: ${e.message}</div>`;
+  }
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────────
+function renderStats() {
+  const total = allData.length;
+  let statsHtml = `<div class="stat"><div class="stat-val">${total}</div><div class="stat-label">Всего заявок</div></div>`;
+
+  if (currentTab === 'orders') {
+    const pkgs = { pkg_group: 0, pkg_individual: 0, pkg_horoscope: 0, pkg_vip: 0 };
+    allData.forEach(r => { if (pkgs[r.pkg_id] !== undefined) pkgs[r.pkg_id]++; });
+    const labels = { pkg_group: 'Групповых', pkg_individual: 'Индивид.', pkg_horoscope: 'Гороскоп', pkg_vip: 'VIP' };
+    Object.entries(pkgs).forEach(([k, v]) => {
+      statsHtml += `<div class="stat"><div class="stat-val">${v}</div><div class="stat-label">${labels[k]}</div></div>`;
+    });
+  }
+
+  document.getElementById('stats').innerHTML = statsHtml;
+}
+
+// ── Table ─────────────────────────────────────────────────────────────────────
+const PKG_LABELS = {
+  pkg_group: ['Групповая', 'badge-group'],
+  pkg_individual: ['Индивидуальная', 'badge-individual'],
+  pkg_horoscope: ['С гороскопом', 'badge-horoscope'],
+  pkg_vip: ['VIP', 'badge-vip'],
+};
+
+function formatDate(iso) {
+  if (!iso) return '—';
+  const d = new Date(iso);
+  return d.toLocaleDateString('ru', { day: '2-digit', month: '2-digit', year: '2-digit' })
+    + ' ' + d.toLocaleTimeString('ru', { hour: '2-digit', minute: '2-digit' });
+}
+
+function renderTable() {
+  const search = document.getElementById('search').value.toLowerCase();
+  const pkg = document.getElementById('filter-pkg').value;
+
+  let rows = allData.filter(r => {
+    const text = [r.full_name, r.tg_name, r.tg_username, r.phone, r.nakshatra, r.sankalpa].join(' ').toLowerCase();
+    const matchSearch = !search || text.includes(search);
+    const matchPkg = !pkg || r.pkg_id === pkg;
+    return matchSearch && matchPkg;
+  });
+
+  if (!rows.length) {
+    document.getElementById('table-container').innerHTML = '<div class="empty">Нет данных</div>';
+    return;
+  }
+
+  if (currentTab === 'orders') {
+    document.getElementById('table-container').innerHTML = `
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>#</th><th>Дата</th><th>Имя</th><th>Telegram</th>
+            <th>Пакет</th><th>Ягья</th><th>Дух. имя</th>
+            <th>Год рожд.</th><th>Накшатра</th><th>Санкальпа</th><th>Телефон</th><th>Фото</th>
+          </tr></thead>
+          <tbody>${rows.map((r, i) => `
+            <tr>
+              <td style="color:#555">${rows.length - i}</td>
+              <td style="white-space:nowrap">${formatDate(r.created_at)}</td>
+              <td>${r.full_name || '—'}</td>
+              <td>${r.tg_username ? `<a class="tg-link" href="https://t.me/${r.tg_username}" target="_blank">@${r.tg_username}</a>` : (r.tg_name || '—')}</td>
+              <td>${badgePkg(r.pkg_id)}</td>
+              <td class="wrap">${r.yagya || '—'}</td>
+              <td>${r.spirit_name || '—'}</td>
+              <td>${r.birth_year || '—'}</td>
+              <td>${r.nakshatra || '—'}</td>
+              <td class="wrap">${r.sankalpa || '—'}</td>
+              <td>${r.phone || '—'}</td>
+              <td>${r.photo_file_id ? '✅' : '—'}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  } else {
+    document.getElementById('table-container').innerHTML = `
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>#</th><th>Дата</th><th>Имя</th><th>Email</th><th>Телефон</th><th>Книга</th><th>Адрес доставки</th>
+          </tr></thead>
+          <tbody>${rows.map((r, i) => `
+            <tr>
+              <td style="color:#555">${rows.length - i}</td>
+              <td style="white-space:nowrap">${formatDate(r.created_at)}</td>
+              <td>${r.full_name || '—'}</td>
+              <td>${r.email || '—'}</td>
+              <td>${r.phone || '—'}</td>
+              <td><span class="badge badge-book">${r.book_title || 'Шани Махатмья'}</span></td>
+              <td class="wrap">${r.address || '—'}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  }
+}
+
+function badgePkg(pkg_id) {
+  const info = PKG_LABELS[pkg_id];
+  if (!info) return pkg_id || '—';
+  return `<span class="badge ${info[1]}">${info[0]}</span>`;
+}
+
+// Auto-load on page open if already logged in
+if (sessionStorage.getItem('kd_admin')) loadData();
+</script>
+</body>
+</html>
