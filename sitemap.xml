@@ -101,4 +101,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://kailashdham.space/blog/dolg-detey-i-roditeley.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://kailashdham.space/blog/dolg-detey-i-roditeley.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://kailashdham.space/blog/dolg-detey-i-roditeley.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kailashdham.space/blog/dolg-detey-i-roditeley.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
