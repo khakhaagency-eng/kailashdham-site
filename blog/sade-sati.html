@@ -80,8 +80,8 @@ a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
     <span class="sep">›</span>
     <a href="/blog/" class="back" id="blogLink">Блог</a>
     <div class="lang-sw">
-      <button data-lang="ru" onclick="setLang('ru')">RU</button>
       <button data-lang="uk" onclick="setLang('uk')">UK</button>
+      <button data-lang="ru" onclick="setLang('ru')">RU</button>
       <button data-lang="en" onclick="setLang('en')">EN</button>
     </div>
   </header>
@@ -144,7 +144,7 @@ function setLang(lang){
   localStorage.setItem('kd_lang',lang);
 }
 
-(function(){setLang(localStorage.getItem('kd_lang')||'ru');})();
+(function(){setLang(localStorage.getItem('kd_lang')||'uk');})();
 </script>
 </body>
 </html>

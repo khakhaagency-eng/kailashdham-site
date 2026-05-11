@@ -73,8 +73,8 @@ a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
   <header class="site-header">
     <a href="/" class="logo">Kailash Dham</a>
     <div class="lang-sw">
-      <button data-lang="ru" onclick="renderIndex('ru')">RU</button>
       <button data-lang="uk" onclick="renderIndex('uk')">UK</button>
+      <button data-lang="ru" onclick="renderIndex('ru')">RU</button>
       <button data-lang="en" onclick="renderIndex('en')">EN</button>
     </div>
   </header>
@@ -119,7 +119,7 @@ function renderIndex(lang){
   localStorage.setItem('kd_lang',lang);
 }
 
-(function(){renderIndex(localStorage.getItem('kd_lang')||'ru');})();
+(function(){renderIndex(localStorage.getItem('kd_lang')||'uk');})();
 </script>
 </body>
 </html>
