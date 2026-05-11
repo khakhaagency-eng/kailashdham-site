@@ -118,7 +118,7 @@
         <p class="book-desc" id="bookDesc2"></p>
         <p class="book-desc" id="bookDesc3"></p>
         <div class="price-row">
-          <span class="price">809 грн</span>
+          <span class="price" id="bookPrice">809 грн</span>
           <a href="https://secure.wayforpay.com/button/bdd3b05ce69a2" target="_blank" class="btn-buy" id="btnBuy">Купити книгу</a>
         </div>
         <p class="author-line"><span id="authorLabel">Автор</span>: <span id="authorName">Дмитро Дяченко</span></p>
@@ -160,7 +160,7 @@
   <div class="bottom-cta">
     <h2 id="ctaH">Отримати книгу</h2>
     <p id="ctaP"></p>
-    <span class="price">809 грн</span>
+    <span class="price" id="bookPrice2">809 грн</span>
     <a href="https://secure.wayforpay.com/button/bdd3b05ce69a2" target="_blank" class="btn-buy" id="btnBuy2">Купити книгу</a>
   </div>
 
@@ -178,6 +178,7 @@ const _ui = {
     book_desc2: 'Действие происходит в городе Удджаини. Услышав неуважительные высказывания Викрама о Шани, король получает проклятие и сталкивается с трудностями: теряет королевство, попадает в Тамалинду, где его казнят. По милости женщины попадает в дом маслоторговца. Работая и сохраняя веру, Викрам молится Шанидеву. В итоге Шани возвращает ему славу и дарует ещё большие блага.',
     book_desc3: 'История обращает внимание на сострадание, преданность, веру, уверенность, терпение и стойкость.',
     btn_buy: 'Купить книгу',
+    price: '809 грн',
     author_label: 'Автор',
     toc_title: 'Содержание книги',
     toc1: 'Вступление',
@@ -211,6 +212,7 @@ const _ui = {
     book_desc2: 'Дія відбувається у місті Удджаїні. Почувши неповажні висловлювання Вікрам про Шані, король отримує прокляття і стикається з труднощами: втрачає королівство, потрапляє в Тамалінду, де його страчують. З милості жінки потрапляє до будинку маслоторгівця. Працюючи та зберігаючи віру, Вікрам молиться Шанідєву. У результаті Шані повертає йому славу і дарує ще більші блага.',
     book_desc3: 'Історія звертає увагу на співчуття, відданість, віру, впевненість, терпіння та стійкість.',
     btn_buy: 'Купити книгу',
+    price: '809 грн',
     author_label: 'Автор',
     toc_title: 'Зміст книги',
     toc1: 'Вступ',
@@ -244,6 +246,7 @@ const _ui = {
     book_desc2: 'The action takes place in the city of Ujjaini. Hearing Vikram\'s disrespectful remarks about Shani, the king receives a curse and faces difficulties: he loses his kingdom, ends up in Tamalinda, where he is executed. By the grace of a woman, he ends up in the house of an oil merchant. Working and keeping faith, Vikram prays to Shanidev. As a result, Shani returns his glory and bestows even greater benefits.',
     book_desc3: 'The story focuses on compassion, loyalty, faith, confidence, patience and perseverance.',
     btn_buy: 'Buy the Book',
+    price: '809 UAH',
     author_label: 'Author',
     toc_title: 'Table of Contents',
     toc1: 'Introduction',
@@ -317,6 +320,8 @@ function setLang(lang) {
   document.getElementById('bookDesc3').innerHTML = u.book_desc3;
   document.getElementById('btnBuy').textContent = u.btn_buy;
   document.getElementById('btnBuy2').textContent = u.btn_buy;
+  document.getElementById('bookPrice').textContent = u.price;
+  document.getElementById('bookPrice2').textContent = u.price;
   document.getElementById('authorLabel').textContent = u.author_label;
   document.getElementById('authorName').textContent = u.author_name;
   document.getElementById('cityYear').textContent = u.city_year;
