@@ -90,6 +90,24 @@
     .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;align-items:center;justify-content:center;cursor:pointer}
     .lightbox.open{display:flex}
     .lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(201,148,58,.2)}
+    .order-modal{display:none;position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:20px}
+    .order-modal.open{display:flex}
+    .order-box{background:#110e0a;border:1px solid rgba(201,148,58,.3);border-radius:4px;padding:36px;width:100%;max-width:440px;max-height:90vh;overflow-y:auto}
+    .order-box-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+    .order-box h2{font-family:'Cinzel',serif;font-size:.88rem;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin:0}
+    .order-close{background:none;border:none;color:var(--w45);font-size:1.2rem;cursor:pointer;padding:0;line-height:1}
+    .order-close:hover{color:var(--w100)}
+    .order-field{margin-bottom:16px}
+    .order-field label{display:block;font-size:.7rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+    .order-field input{width:100%;background:#0a0806;border:1px solid rgba(201,148,58,.22);border-radius:2px;padding:10px 14px;color:var(--w100);font-family:'Montserrat',sans-serif;font-size:.88rem;outline:none;transition:border-color .2s}
+    .order-field input:focus{border-color:var(--gold)}
+    .order-submit{width:100%;padding:13px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:all .25s}
+    .order-submit:hover:not(:disabled){background:var(--gold);color:var(--dark)}
+    .order-submit:disabled{opacity:.5;cursor:default}
+    .order-error{color:#e06060;font-size:.8rem;margin-top:8px;display:none}
+    .order-success{text-align:center;padding:8px 0}
+    .order-success p{color:var(--w70);font-size:.9rem;margin-bottom:20px;line-height:1.7}
+    .order-multi{margin-top:16px;font-size:.85rem;color:var(--gold);line-height:1.6;display:none}
   </style>
 </head>
 <body>
@@ -119,7 +137,7 @@
         <p class="book-desc" id="bookDesc3"></p>
         <div class="price-row">
           <span class="price" id="bookPrice">809 грн</span>
-          <a href="https://secure.wayforpay.com/button/bdd3b05ce69a2" target="_blank" class="btn-buy" id="btnBuy">Купити книгу</a>
+          <button class="btn-buy" id="btnBuy" onclick="openOrderForm()">Купити книгу</button>
         </div>
         <p class="author-line"><span id="authorLabel">Автор</span>: <span id="authorName">Дмитро Дяченко</span></p>
         <p class="author-line" style="margin-top:6px"><span id="cityYear">Київ — 2016</span></p>
@@ -161,7 +179,41 @@
     <h2 id="ctaH">Отримати книгу</h2>
     <p id="ctaP"></p>
     <span class="price" id="bookPrice2">809 грн</span>
-    <a href="https://secure.wayforpay.com/button/bdd3b05ce69a2" target="_blank" class="btn-buy" id="btnBuy2">Купити книгу</a>
+    <button class="btn-buy" id="btnBuy2" onclick="openOrderForm()">Купити книгу</button>
+  </div>
+
+  <div class="order-modal" id="orderModal">
+    <div class="order-box">
+      <div class="order-box-head">
+        <h2 id="ofTitle">Оформити замовлення</h2>
+        <button class="order-close" onclick="closeOrderForm()">✕</button>
+      </div>
+      <div id="ofForm">
+        <div class="order-field">
+          <label id="ofLabelName">ПІБ</label>
+          <input type="text" id="ofName" autocomplete="name">
+        </div>
+        <div class="order-field">
+          <label id="ofLabelPhone">Телефон</label>
+          <input type="tel" id="ofPhone" autocomplete="tel">
+        </div>
+        <div class="order-field">
+          <label id="ofLabelAddr">Адреса Нової Пошти</label>
+          <input type="text" id="ofAddr">
+        </div>
+        <div class="order-field">
+          <label id="ofLabelQty">Кількість примірників</label>
+          <input type="number" id="ofQty" value="1" min="1" max="99">
+        </div>
+        <div class="order-error" id="ofError"></div>
+        <button class="order-submit" id="ofSubmit" onclick="submitOrder()">Оформити замовлення</button>
+      </div>
+      <div class="order-success" id="ofSuccess" style="display:none">
+        <p id="ofSuccessText"></p>
+        <a href="https://secure.wayforpay.com/button/bdd3b05ce69a2" target="_blank" class="btn-buy" id="ofPayBtn" style="display:none">Перейти до оплати</a>
+        <p class="order-multi" id="ofMultiText"></p>
+      </div>
+    </div>
   </div>
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -202,7 +254,17 @@ const _ui = {
     author_name: 'Дмитрий Дьяченко',
     city_year: 'Киев — 2016',
     lang_label: 'Язык издания',
-    lang_value: 'Русский'
+    lang_value: 'Русский',
+    of_title: 'Оформить заказ',
+    of_label_name: 'ФИО',
+    of_label_phone: 'Телефон',
+    of_label_addr: 'Адрес доставки (Новая Почта)',
+    of_label_qty: 'Количество экземпляров',
+    of_submit: 'Оформить заказ',
+    of_required: 'Пожалуйста, заполните все поля',
+    of_success: 'Заказ принят! Нажмите кнопку ниже для оплаты.',
+    of_pay_btn: 'Перейти к оплате',
+    of_multi: 'Для заказа нескольких книг наш менеджер свяжется с вами для уточнения стоимости.'
   },
   uk: {
     nav_back: 'Головна',
@@ -236,7 +298,17 @@ const _ui = {
     author_name: 'Дмитро Дяченко',
     city_year: 'Київ — 2016',
     lang_label: 'Мова видання',
-    lang_value: 'Русский'
+    lang_value: 'Русский',
+    of_title: 'Оформити замовлення',
+    of_label_name: 'ПІБ',
+    of_label_phone: 'Телефон',
+    of_label_addr: 'Адреса доставки (Нова Пошта)',
+    of_label_qty: 'Кількість примірників',
+    of_submit: 'Оформити замовлення',
+    of_required: 'Будь ласка, заповніть усі поля',
+    of_success: 'Замовлення прийнято! Натисніть кнопку нижче для оплати.',
+    of_pay_btn: 'Перейти до оплати',
+    of_multi: 'Для замовлення кількох книг наш менеджер зв\'яжеться з вами для уточнення вартості.'
   },
   en: {
     nav_back: 'Home',
@@ -270,7 +342,17 @@ const _ui = {
     author_name: 'Dmytro Diachenko',
     city_year: 'Kyiv — 2016',
     lang_label: 'Language',
-    lang_value: 'Русский'
+    lang_value: 'Русский',
+    of_title: 'Place your order',
+    of_label_name: 'Full name',
+    of_label_phone: 'Phone',
+    of_label_addr: 'Delivery address (Nova Poshta)',
+    of_label_qty: 'Quantity',
+    of_submit: 'Place order',
+    of_required: 'Please fill in all fields',
+    of_success: 'Order received! Click the button below to pay.',
+    of_pay_btn: 'Proceed to payment',
+    of_multi: 'For orders of multiple books, our manager will contact you to clarify the price.'
   }
 };
 
@@ -343,13 +425,95 @@ function setLang(lang) {
 
   document.querySelectorAll('.lang-sw button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
   localStorage.setItem('kd_lang', lang);
+
+  // Order form labels
+  document.getElementById('ofTitle').textContent = u.of_title;
+  document.getElementById('ofLabelName').textContent = u.of_label_name;
+  document.getElementById('ofLabelPhone').textContent = u.of_label_phone;
+  document.getElementById('ofLabelAddr').textContent = u.of_label_addr;
+  document.getElementById('ofLabelQty').textContent = u.of_label_qty;
+  document.getElementById('ofSubmit').textContent = u.of_submit;
 }
 
-(function(){ setLang(localStorage.getItem('kd_lang') || 'uk'); })();
+let _currentLang = 'uk';
+(function(){ _currentLang = localStorage.getItem('kd_lang') || 'uk'; setLang(_currentLang); })();
+
+// Order form
+const SB_URL = 'https://gbnrmuhqcqdoevjrvlad.supabase.co';
+const SB_KEY = 'sb_publishable_r8uVLfoEO5gbuFEIhEyuGQ_lheUtZEJ';
+
+function openOrderForm() {
+  document.getElementById('ofForm').style.display = 'block';
+  document.getElementById('ofSuccess').style.display = 'none';
+  document.getElementById('ofError').style.display = 'none';
+  document.getElementById('ofName').value = '';
+  document.getElementById('ofPhone').value = '';
+  document.getElementById('ofAddr').value = '';
+  document.getElementById('ofQty').value = '1';
+  document.getElementById('orderModal').classList.add('open');
+}
+
+function closeOrderForm() {
+  document.getElementById('orderModal').classList.remove('open');
+}
+
+async function submitOrder() {
+  const name = document.getElementById('ofName').value.trim();
+  const phone = document.getElementById('ofPhone').value.trim();
+  const addr = document.getElementById('ofAddr').value.trim();
+  const qty = parseInt(document.getElementById('ofQty').value) || 1;
+  const u = _ui[_currentLang] || _ui.uk;
+  const errEl = document.getElementById('ofError');
+
+  if (!name || !phone || !addr) {
+    errEl.textContent = u.of_required;
+    errEl.style.display = 'block';
+    return;
+  }
+  errEl.style.display = 'none';
+  const btn = document.getElementById('ofSubmit');
+  btn.disabled = true;
+  btn.textContent = '...';
+
+  try {
+    await fetch(SB_URL + '/rest/v1/book_orders', {
+      method: 'POST',
+      headers: {
+        'apikey': SB_KEY,
+        'Authorization': 'Bearer ' + SB_KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({ full_name: name, phone: phone, address: addr, quantity: qty, book_title: 'Шани Махатмья' })
+    });
+  } catch(e) {}
+
+  btn.disabled = false;
+  btn.textContent = u.of_submit;
+  document.getElementById('ofForm').style.display = 'none';
+  document.getElementById('ofSuccess').style.display = 'block';
+  document.getElementById('ofSuccessText').textContent = u.of_success;
+
+  const payBtn = document.getElementById('ofPayBtn');
+  const multiTxt = document.getElementById('ofMultiText');
+  if (qty > 1) {
+    payBtn.style.display = 'none';
+    multiTxt.textContent = u.of_multi;
+    multiTxt.style.display = 'block';
+  } else {
+    payBtn.style.display = 'inline-block';
+    payBtn.textContent = u.of_pay_btn;
+    multiTxt.style.display = 'none';
+  }
+}
+
+document.getElementById('orderModal').addEventListener('click', function(e) {
+  if (e.target === this) closeOrderForm();
+});
 
 function openLightbox(src){ document.getElementById('lightboxImg').src=src; document.getElementById('lightbox').classList.add('open'); }
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeLightbox(); closeOrderForm(); } });
   </script>
 </body>
 </html>
