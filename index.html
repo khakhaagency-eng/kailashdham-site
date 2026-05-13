@@ -4571,8 +4571,13 @@
 
     <!-- Звіт -->
     <div class="pm-report-note">
-      <span data-i18n="pm_report_label">Звіт про яг'ю та супровідна інформація —</span> <a href="https://t.me/kailashdham" target="_blank" rel="noopener" data-i18n="pm_report_link">Telegram-канал Kailash Dham</a>
+      <span data-i18n="pm_report_label">Звіт про яг'ю та супровідна інформація —</span> <a href="https://t.me/kailas_dham" target="_blank" rel="noopener" data-i18n="pm_report_link">Telegram-канал Kailash Dham</a>
     </div>
+
+    <a href="https://t.me/kailas_dham" target="_blank" rel="noopener" class="pm-tg-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8l-1.68 7.92c-.12.56-.48.7-.96.44l-2.64-1.94-1.28 1.22c-.14.14-.26.26-.52.26l.18-2.6 4.72-4.26c.2-.18-.04-.28-.32-.1L7.92 14.8l-2.56-.8c-.56-.18-.58-.56.12-.82l10-3.86c.46-.16.88.12.72.48h-.56z" fill="currentColor"/></svg>
+      <span data-i18n="pm_tg_btn">Telegram-канал — анонси та звіти</span>
+    </a>
 
   </div>
 </section>
@@ -4607,6 +4612,8 @@
   .pm-thanks { color:rgba(201,148,58,.6) !important; font-style:italic; font-size:.85rem !important; }
   .pm-report-note { color:rgba(255,255,255,.3); font-size:.8rem; }
   .pm-report-note a { color:rgba(201,148,58,.6); }
+  .pm-tg-btn { display:inline-flex; align-items:center; gap:10px; margin-top:32px; padding:14px 32px; background:linear-gradient(135deg,rgba(201,148,58,.15) 0%,rgba(201,148,58,.08) 100%); border:1px solid rgba(201,148,58,.5); border-radius:3px; color:var(--gold); font-family:'Cinzel',serif; font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; transition:background .25s,border-color .25s,transform .2s; }
+  .pm-tg-btn:hover { background:linear-gradient(135deg,rgba(201,148,58,.25) 0%,rgba(201,148,58,.15) 100%); border-color:var(--gold); transform:translateY(-1px); color:var(--gold-lt); }
   @media(max-width:900px){ .pm-rules-grid{ grid-template-columns:repeat(2,1fr); } .pm-pay-grid{ grid-template-columns:1fr; } .pm-notes-grid{ grid-template-columns:repeat(2,1fr); } }
   @media(max-width:540px){ .pm-rules-grid{ grid-template-columns:1fr; } .pm-notes-grid{ grid-template-columns:1fr; } }
 </style>
@@ -5106,6 +5113,7 @@ const i18n = {
     pm_conclusion: "Яг'я — це не просто ритуал, а комплексна духовна практика, яка має значення для тіла, розуму, духу і суспільства. Дотримуючись цих правил, ви зможете глибше зануритися в атмосферу яг'ї, зберегти чистоту простору і прийняти благословення з відкритим серцем.",
     pm_thanks: 'Дякуємо за проявлену повагу. — Kailash Dham',
     pm_report_label: "Звіт про яг'ю та супровідна інформація —", pm_report_link: 'Telegram-канал Kailash Dham',
+    pm_tg_btn: 'Telegram-канал — анонси та звіти',
   },
   ru: {
     logo_sub: 'Space of Rituals',
@@ -5333,6 +5341,7 @@ const i18n = {
     pm_conclusion: 'Ягья — это не просто ритуал, а комплексная духовная практика, имеющая значение для тела, ума, духа и общества. Соблюдая эти правила, вы сможете глубже погрузиться в атмосферу ягьи, сохранить чистоту пространства и принять благословение с открытым сердцем.',
     pm_thanks: 'Благодарим за проявленное уважение. — Kailash Dham',
     pm_report_label: 'Отчёт о ягье и сопроводительная информация —', pm_report_link: 'Telegram-канал Kailash Dham',
+    pm_tg_btn: 'Telegram-канал — анонсы и отчёты',
   },
   en: {
     logo_sub: 'Space of Rituals',
@@ -5560,6 +5569,7 @@ const i18n = {
     pm_conclusion: 'Yagya is not simply a ritual — it is a comprehensive spiritual practice with significance for the body, mind, spirit, and community. By observing these guidelines, you will be able to immerse yourself more deeply in the atmosphere of the yagya, preserve the purity of the space, and receive its blessings with an open heart.',
     pm_thanks: 'Thank you for your respect. — Kailash Dham',
     pm_report_label: 'The yagya report and accompanying information —', pm_report_link: 'Kailash Dham Telegram channel',
+    pm_tg_btn: 'Telegram channel — announcements & reports',
   }
 };
 
