@@ -141,7 +141,7 @@
       </div>
       <div class="hero-text">
         <span class="book-label" id="bookLabel">Книга</span>
-        <h1 class="book-title">Шані Махатм'я</h1>
+        <h1 class="book-title" id="bookTitle">Шані Махатм'я</h1>
         <p class="book-subtitle" id="bookSubtitle">Незрівнянна Велич Сатурна</p>
         <div class="gold-line"></div>
         <p class="book-desc" id="bookDesc1"></p>
@@ -237,6 +237,7 @@ const _ui = {
   ru: {
     nav_back: 'Главная',
     book_label: 'Книга',
+    book_title: 'Шани Махатмья',
     book_subtitle: 'Несравненное Величие Сатурна',
     book_desc1: '«Шани махатмья» — увлекательная история на маратхи о саде-сати (семь с половиной лет) жизни короля Викрамадитьи. История повествует о влиянии Шри Шанидева (Сатурна) и способах получить Его Милость.',
     book_desc2: 'Действие происходит в городе Удджаини. Услышав неуважительные высказывания Викрама о Шани, король получает проклятие и сталкивается с трудностями: теряет королевство, попадает в Тамалинду, где его казнят. По милости женщины попадает в дом маслоторговца. Работая и сохраняя веру, Викрам молится Шанидеву. В итоге Шани возвращает ему славу и дарует ещё большие блага.',
@@ -281,6 +282,7 @@ const _ui = {
   uk: {
     nav_back: 'Головна',
     book_label: 'Книга',
+    book_title: 'Шані Махатм\'я',
     book_subtitle: 'Незрівнянна Велич Сатурна',
     book_desc1: '«Шані махатм\'я» - захоплююча історія на маратхи про сад-саті (сім з половиною років) життя короля Вікрамадіті. Історія розповідає про вплив Шрі Шанідєва (Сатурна) та способи отримати Його Милість.',
     book_desc2: 'Дія відбувається у місті Удджаїні. Почувши неповажні висловлювання Вікрам про Шані, король отримує прокляття і стикається з труднощами: втрачає королівство, потрапляє в Тамалінду, де його страчують. З милості жінки потрапляє до будинку маслоторгівця. Працюючи та зберігаючи віру, Вікрам молиться Шанідєву. У результаті Шані повертає йому славу і дарує ще більші блага.',
@@ -325,6 +327,7 @@ const _ui = {
   en: {
     nav_back: 'Home',
     book_label: 'Book',
+    book_title: 'Shani Mahatmya',
     book_subtitle: 'The Incomparable Majesty of Saturn',
     book_desc1: 'Shani Mahatmya is a fascinating Marathi story about the sada sati (seven and a half years) life of King Vikramaditya. The story talks about the influence of Shri Shanideva (Saturn) and the means to obtain His Grace.',
     book_desc2: 'The action takes place in the city of Ujjaini. Hearing Vikram\'s disrespectful remarks about Shani, the king receives a curse and faces difficulties: he loses his kingdom, ends up in Tamalinda, where he is executed. By the grace of a woman, he ends up in the house of an oil merchant. Working and keeping faith, Vikram prays to Shanidev. As a result, Shani returns his glory and bestows even greater benefits.',
@@ -408,6 +411,7 @@ function setLang(lang) {
 
   document.getElementById('navBack').textContent = u.nav_back;
   document.getElementById('bookLabel').textContent = u.book_label;
+  document.getElementById('bookTitle').textContent = u.book_title;
   document.getElementById('bookSubtitle').textContent = u.book_subtitle;
   document.getElementById('bookDesc1').innerHTML = u.book_desc1;
   document.getElementById('bookDesc2').innerHTML = u.book_desc2;
