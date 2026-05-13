@@ -108,6 +108,18 @@
     .order-success{text-align:center;padding:8px 0}
     .order-success p{color:var(--w70);font-size:.9rem;margin-bottom:20px;line-height:1.7}
     .order-multi{margin-top:16px;font-size:.85rem;color:var(--gold);line-height:1.6;display:none}
+  
+.site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px}
+.footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+@media(max-width:640px){.footer-inner{grid-template-columns:1fr}}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.72rem;color:rgba(201,148,58,.65);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:#c9943a}
+.footer-col strong{font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.04em;margin-bottom:4px}
+.footer-col span{color:rgba(255,255,255,.3);font-size:.72rem;line-height:1.6}
+.footer-col .footer-link{color:rgba(255,255,255,.3);text-decoration:none;font-size:.72rem;text-transform:none;letter-spacing:0}
+.footer-col .footer-link:hover{color:rgba(201,148,58,.7)}
+.footer-note{color:rgba(255,255,255,.2);font-size:.67rem;font-style:italic;margin-top:6px}
   </style>
 </head>
 <body>
@@ -515,5 +527,26 @@ function openLightbox(src){ document.getElementById('lightboxImg').src=src; docu
 function closeLightbox(){ document.getElementById('lightbox').classList.remove('open'); }
 document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeLightbox(); closeOrderForm(); } });
   </script>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/polityka-konfidentsiynosti.html">Політика конфіденційності</a>
+      <a href="/publichna-oferta.html">Публічна оферта</a>
+      <a href="/polityka-povernennya-koshtiv.html">Політика повернення коштів</a>
+    </div>
+    <div class="footer-col">
+      <strong>Контактна інформація:</strong>
+      <span>ФОП Дяченко Дмитро Вікторович</span>
+      <span>ІПН: 2578013372</span>
+      <span>Адреса: Київська область, Вишгородський район, с. Димер, вул. Шевченко, 1, кв. 3</span>
+    </div>
+    <div class="footer-col">
+      <span>Телефон: <a class="footer-link" href="tel:+380638258339">+380638258339</a></span>
+      <span>Email: <a class="footer-link" href="mailto:dayanandagiri@gmail.com">dayanandagiri@gmail.com</a></span>
+      <span class="footer-note">З усіх питань щодо оплати, участі, доступу до матеріалів, перенесення або повернення коштів покупець може звернутися за вказаними контактами.</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

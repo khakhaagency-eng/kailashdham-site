@@ -549,6 +549,18 @@
       .hero-title { font-size: clamp(24px, 8.5vw, 34px); letter-spacing: 1px; }
       .cta-btn { padding: 14px 32px; }
     }
+  
+.site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px}
+.footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+@media(max-width:640px){.footer-inner{grid-template-columns:1fr}}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.72rem;color:rgba(201,148,58,.65);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:#c9943a}
+.footer-col strong{font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.04em;margin-bottom:4px}
+.footer-col span{color:rgba(255,255,255,.3);font-size:.72rem;line-height:1.6}
+.footer-col .footer-link{color:rgba(255,255,255,.3);text-decoration:none;font-size:.72rem;text-transform:none;letter-spacing:0}
+.footer-col .footer-link:hover{color:rgba(201,148,58,.7)}
+.footer-note{color:rgba(255,255,255,.2);font-size:.67rem;font-style:italic;margin-top:6px}
   </style>
 </head>
 <body>
@@ -4433,6 +4445,86 @@
 </style>
 
 <!-- ═══════════════════════════════════════════ -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- BLOCK: ПАМ'ЯТКА УЧАСНИКІВ ЯГ'Ї           -->
+<!-- ═══════════════════════════════════════════ -->
+<section class="pamyatka-section" id="pamyatka">
+
+  <div class="pamyatka-bg"></div>
+
+  <div class="pamyatka-inner">
+
+    <div class="what-lotus">
+      <svg width="32" height="32" viewBox="0 0 42 42" fill="none">
+        <path d="M21 3c0 0-3.5 7-3.5 13 0 2.5 1.6 4 3.5 4s3.5-1.5 3.5-4c0-6-3.5-13-3.5-13Z" fill="#c9943a" opacity="0.9"/>
+        <path d="M39 21c0 0-7-3.5-13-3.5-2.5 0-4 1.6-4 3.5s1.5 3.5 4 3.5c6 0 13-3.5 13-3.5Z" fill="#c9943a" opacity="0.9"/>
+        <path d="M21 39c0 0 3.5-7 3.5-13 0-2.5-1.6-4-3.5-4s-3.5 1.5-3.5 4c0 6 3.5 13 3.5 13Z" fill="#c9943a" opacity="0.9"/>
+        <path d="M3 21c0 0 7 3.5 13 3.5 2.5 0 4-1.6 4-3.5s-1.5-3.5-4-3.5C10 17.5 3 21 3 21Z" fill="#c9943a" opacity="0.9"/>
+        <path d="M33.2 8.8c0 0-6.2 4.7-8.4 9.7-.9 1.9-.1 4.1 1.8 5s4.1.1 5-1.8c2.2-5 1.6-12.9 1.6-12.9Z" fill="#c9943a" opacity="0.5"/>
+        <path d="M33.2 33.2c0 0-4.7-6.2-9.7-8.4-1.9-.9-4.1-.1-5 1.8s-.1 4.1 1.8 5c5 2.2 12.9 1.6 12.9 1.6Z" fill="#c9943a" opacity="0.5"/>
+        <path d="M8.8 33.2c0 0 6.2-4.7 8.4-9.7.9-1.9.1-4.1-1.8-5s-4.1-.1-5 1.8c-2.2 5-1.6 12.9-1.6 12.9Z" fill="#c9943a" opacity="0.5"/>
+        <path d="M8.8 8.8c0 0 4.7 6.2 9.7 8.4 1.9.9 4.1.1 5-1.8s.1-4.1-1.8-5C16.7 8.2 8.8 8.8 8.8 8.8Z" fill="#c9943a" opacity="0.5"/>
+        <circle cx="21" cy="21" r="4.5" fill="#c9943a"/>
+        <circle cx="21" cy="21" r="2.5" fill="#0a0806"/>
+      </svg>
+    </div>
+
+    <div class="pamyatka-title-wrap">
+      <h2 class="pamyatka-title" data-i18n="pm_title">ПАМ'ЯТКА</h2>
+      <p class="pamyatka-subtitle" data-i18n="pm_subtitle">УЧАСНИКІВ ЯГ'Ї</p>
+    </div>
+
+    <div class="what-divider" style="margin-bottom:32px;">
+      <div class="wd-line"></div><div class="wd-diamond"></div><div class="wd-line"></div>
+    </div>
+
+    <p class="pamyatka-intro" data-i18n="pm_intro">Яг'я — священний ведичний ритуал, що потребує поваги, чистоти та правильного наміру. Дотримуйтесь цих правил, щоб ваша участь була повною і гармонійною.</p>
+
+    <div class="pm-rules-grid">
+      <div class="pm-rule"><div class="pm-num">1</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r1_h">Повага та тиша</h3><p class="pm-rule-p" data-i18n="pm_r1">Телефони — в беззвучний режим. Фото і відео — лише до або після яг'ї.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">2</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r2_h">Чистота</h3><p class="pm-rule-p" data-i18n="pm_r2">Приходьте після душу в чистому одязі. Уникайте шкіряних речей. Перед входом — омийте руки та ноги.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">3</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r3_h">Взуття</h3><p class="pm-rule-p" data-i18n="pm_r3">Знімайте взуття перед входом до яг'я-шали.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">4</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r4_h">Кунда</h3><p class="pm-rule-p" data-i18n="pm_r4">Сидіть так, щоб ноги не торкалися кунди. Це священний вівтар.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">5</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r5_h">Підношення</h3><p class="pm-rule-p" data-i18n="pm_r5">Квіти не нюхайте, їжу не куштуйте до підношення. Після благословення — приймайте як прасад.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">6</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r6_h">Чистота розуму</h3><p class="pm-rule-p" data-i18n="pm_r6">Слухайте мантри та молитви з вірою, увагою і повагою.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">7</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r7_h">Чисте серце</h3><p class="pm-rule-p" data-i18n="pm_r7">Підношення робіть щиро. Важливий не предмет, а внутрішній стан.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">8</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r8_h">Слідування пуджарі</h3><p class="pm-rule-p" data-i18n="pm_r8">Уважно слухайте і виконуйте наставлення пуджарі — це забезпечує гармонію ритуалу.</p></div></div>
+      <div class="pm-rule"><div class="pm-num">9</div><div class="pm-rule-body"><h3 class="pm-rule-h" data-i18n="pm_r9_h">Вдячність</h3><p class="pm-rule-p" data-i18n="pm_r9">Дякуйте богам під час і після яг'ї. Вдячність — одна із головних основ ритуалу.</p></div></div>
+    </div>
+
+    <div class="pm-notes-grid">
+      <div class="pm-note"><h4 class="pm-note-h" data-i18n="pm_punct_h">Пунктуальність</h4><p class="pm-note-p" data-i18n="pm_punct">Приїжджайте заздалегідь. Ритуали проводяться у чітко визначений час з астрологічних міркувань.</p></div>
+      <div class="pm-note"><h4 class="pm-note-h" data-i18n="pm_intent_h">Намір (санкальпа)</h4><p class="pm-note-p" data-i18n="pm_intent">Сформулюйте свій намір чітко і стисло до початку ритуалу.</p></div>
+      <div class="pm-note"><h4 class="pm-note-h" data-i18n="pm_cost_h">Вартість</h4><p class="pm-note-p" data-i18n="pm_cost">Актуальна вартість участі вказана у Telegram-боті Kailash Dham.</p></div>
+      <div class="pm-note"><h4 class="pm-note-h" data-i18n="pm_report_h">Звіт</h4><p class="pm-note-p" data-i18n="pm_report">Звіт про яг'ю та супровідна інформація — у Telegram-каналі Kailash Dham.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .pamyatka-section { position:relative; background:var(--dark); padding:90px 24px 80px; overflow:hidden; }
+  .pamyatka-bg { position:absolute; inset:0; background: radial-gradient(ellipse 55% 40% at 50% 0%,rgba(140,65,10,.16) 0%,transparent 70%), radial-gradient(ellipse 40% 30% at 0% 100%,rgba(120,55,8,.1) 0%,transparent 100%); pointer-events:none; }
+  .pamyatka-inner { position:relative; max-width:960px; margin:0 auto; display:flex; flex-direction:column; align-items:center; }
+  .pamyatka-title-wrap { text-align:center; margin-bottom:8px; }
+  .pamyatka-title { font-family:'Cinzel',serif; font-size:clamp(1.4rem,3.5vw,2rem); font-weight:700; color:var(--gold); letter-spacing:.18em; text-transform:uppercase; line-height:1.15; }
+  .pamyatka-subtitle { font-family:'Cinzel',serif; font-size:clamp(.72rem,1.6vw,.88rem); color:rgba(201,148,58,.5); letter-spacing:.22em; text-transform:uppercase; margin-top:6px; }
+  .pamyatka-intro { color:rgba(255,255,255,.5); font-size:.88rem; line-height:1.75; text-align:center; max-width:580px; margin-bottom:48px; }
+  .pm-rules-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; width:100%; margin-bottom:32px; }
+  .pm-rule { background:rgba(255,255,255,.03); border:1px solid rgba(201,148,58,.16); border-radius:3px; padding:20px 16px; display:flex; gap:12px; align-items:flex-start; transition:border-color .25s; }
+  .pm-rule:hover { border-color:rgba(201,148,58,.35); }
+  .pm-num { font-family:'Cinzel',serif; font-size:1.3rem; color:rgba(201,148,58,.3); font-weight:700; line-height:1; min-width:22px; flex-shrink:0; margin-top:2px; }
+  .pm-rule-h { font-family:'Cinzel',serif; font-size:.7rem; font-weight:600; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:5px; }
+  .pm-rule-p { color:rgba(255,255,255,.5); font-size:.8rem; line-height:1.65; }
+  .pm-notes-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; width:100%; border-top:1px solid rgba(201,148,58,.1); padding-top:28px; }
+  .pm-note { text-align:center; padding:18px 10px; }
+  .pm-note-h { font-family:'Cinzel',serif; font-size:.68rem; font-weight:600; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px; }
+  .pm-note-p { color:rgba(255,255,255,.4); font-size:.76rem; line-height:1.6; }
+  @media(max-width:900px){ .pm-rules-grid{ grid-template-columns:repeat(2,1fr); } .pm-notes-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:540px){ .pm-rules-grid{ grid-template-columns:1fr; } }
+</style>
+
 <!-- BLOCK 12: ФИНАЛЬНЫЙ                       -->
 <!-- ═══════════════════════════════════════════ -->
 <section class="final-section">
@@ -4894,6 +4986,22 @@ const i18n = {
     cta_select: "ПІДІБРАТИ ЯГ'Ю",
     cta_schedule: 'ПЕРЕГЛЯНУТИ РОЗКЛАД',
     cta_join: 'ВЗЯТИ УЧАСТЬ',
+    pm_title: "ПАМ'ЯТКА",
+    pm_subtitle: "УЧАСНИКІВ ЯГ'Ї",
+    pm_intro: "Яг'я — священний ведичний ритуал, що потребує поваги, чистоти та правильного наміру. Дотримуйтесь цих правил, щоб ваша участь була повною і гармонійною.",
+    pm_r1_h: 'Повага та тиша', pm_r1: "Телефони — в беззвучний режим. Фото і відео — лише до або після яг'ї.",
+    pm_r2_h: 'Чистота', pm_r2: 'Приходьте після душу в чистому одязі. Уникайте шкіряних речей. Перед входом — омийте руки та ноги.',
+    pm_r3_h: 'Взуття', pm_r3: "Знімайте взуття перед входом до яг'я-шали.",
+    pm_r4_h: 'Кунда', pm_r4: 'Сидіть так, щоб ноги не торкалися кунди. Це священний вівтар.',
+    pm_r5_h: 'Підношення', pm_r5: 'Квіти не нюхайте, їжу не куштуйте до підношення. Після благословення — приймайте як прасад.',
+    pm_r6_h: 'Чистота розуму', pm_r6: 'Слухайте мантри та молитви з вірою, увагою і повагою.',
+    pm_r7_h: 'Чисте серце', pm_r7: 'Підношення робіть щиро. Важливий не предмет, а внутрішній стан.',
+    pm_r8_h: 'Слідування пуджарі', pm_r8: 'Уважно слухайте і виконуйте наставлення пуджарі — це забезпечує гармонію ритуалу.',
+    pm_r9_h: 'Вдячність', pm_r9: "Дякуйте богам під час і після яг'ї. Вдячність — одна із головних основ ритуалу.",
+    pm_punct_h: 'Пунктуальність', pm_punct: 'Приїжджайте заздалегідь. Ритуали проводяться у чітко визначений час з астрологічних міркувань.',
+    pm_intent_h: 'Намір (санкальпа)', pm_intent: 'Сформулюйте свій намір чітко і стисло до початку ритуалу.',
+    pm_cost_h: 'Вартість', pm_cost: 'Актуальна вартість участі вказана у Telegram-боті Kailash Dham.',
+    pm_report_h: 'Звіт', pm_report: "Звіт про яг'ю та супровідна інформація — у Telegram-каналі Kailash Dham.",
   },
   ru: {
     logo_sub: 'Space of Rituals',
@@ -5087,6 +5195,22 @@ const i18n = {
     cta_select: 'ПРОЙТИ ПОДБОР ЯГЬИ',
     cta_schedule: 'ПОСМОТРЕТЬ РАСПИСАНИЕ',
     cta_join: 'ПРИНЯТЬ УЧАСТИЕ',
+    pm_title: 'ПАМЯТКА',
+    pm_subtitle: 'УЧАСТНИКОВ ЯГЬИ',
+    pm_intro: 'Ягья — священное ведическое действие, требующее уважения, чистоты и правильного намерения. Соблюдайте эти правила, чтобы ваше участие было полным и гармоничным.',
+    pm_r1_h: 'Уважение и тишина', pm_r1: 'Телефоны — в беззвучный режим. Съёмка — только до или после ягьи.',
+    pm_r2_h: 'Чистота', pm_r2: 'Приходите после душа в чистой одежде. Избегайте кожаных вещей. Перед входом — омойте руки и ноги.',
+    pm_r3_h: 'Обувь', pm_r3: 'Снимайте обувь перед входом в яджна-шалу.',
+    pm_r4_h: 'Кунда', pm_r4: 'Сидите так, чтобы ноги не касались кунды. Это священный алтарь.',
+    pm_r5_h: 'Подношения', pm_r5: 'Не нюхайте цветы, не пробуйте еду до подношения. После благословения — принимайте как прасад.',
+    pm_r6_h: 'Чистота ума', pm_r6: 'Слушайте мантры и молитвы с верой, вниманием и уважением.',
+    pm_r7_h: 'Чистое сердце', pm_r7: 'Делайте подношения искренне. Важен не предмет, а внутреннее состояние.',
+    pm_r8_h: 'Следование пуджари', pm_r8: 'Внимательно слушайте и выполняйте наставления пуджари — это обеспечивает гармонию ритуала.',
+    pm_r9_h: 'Благодарность', pm_r9: 'Благодарите богов во время и после ягьи. Благодарность — одна из главных основ ритуала.',
+    pm_punct_h: 'Пунктуальность', pm_punct: 'Приезжайте заблаговременно. Ритуалы проводятся в точное время по астрологическим расчётам.',
+    pm_intent_h: 'Намерение (санкальпа)', pm_intent: 'Сформулируйте своё намерение ясно и кратко до начала ритуала.',
+    pm_cost_h: 'Стоимость', pm_cost: 'Актуальная стоимость участия указана в Telegram-боте Kailash Dham.',
+    pm_report_h: 'Отчёт', pm_report: 'Отчёт о ягье и сопроводительная информация — в Telegram-канале Kailash Dham.',
   },
   en: {
     logo_sub: 'Space of Rituals',
@@ -5280,6 +5404,22 @@ const i18n = {
     cta_select: 'FIND YOUR YAGYA',
     cta_schedule: 'VIEW SCHEDULE',
     cta_join: 'JOIN NOW',
+    pm_title: "PARTICIPANT'S GUIDE",
+    pm_subtitle: 'FOR YAGYA',
+    pm_intro: 'Yagya is a sacred Vedic ritual requiring respect, purity, and right intention. Follow these guidelines to ensure your participation is harmonious and complete.',
+    pm_r1_h: 'Respect & Silence', pm_r1: 'Set phones to silent. Photography is permitted only before or after the yagya.',
+    pm_r2_h: 'Purity', pm_r2: 'Come after bathing in clean clothes. Avoid leather items. Before entering — rinse hands and feet.',
+    pm_r3_h: 'Footwear', pm_r3: 'Remove footwear before entering the yajna-shala.',
+    pm_r4_h: 'The Kunda', pm_r4: 'Sit so that your feet do not touch the kunda. It is the sacred altar.',
+    pm_r5_h: 'Offerings', pm_r5: 'Do not smell flowers or taste food before offering. After blessing — receive as prasad.',
+    pm_r6_h: 'Purity of Mind', pm_r6: 'Listen to mantras and prayers with faith, attention, and respect.',
+    pm_r7_h: 'Pure Heart', pm_r7: 'Make offerings sincerely. What matters is your inner state, not the object itself.',
+    pm_r8_h: 'Follow the Pujari', pm_r8: "Listen carefully and follow the pujari's instructions — this ensures the harmony of the ritual.",
+    pm_r9_h: 'Gratitude', pm_r9: 'Thank the deities during and after the yagya. Gratitude is one of the foundations of the ritual.',
+    pm_punct_h: 'Punctuality', pm_punct: 'Arrive early. Rituals are performed at precise times based on astrological calculations.',
+    pm_intent_h: 'Intention (Sankalpa)', pm_intent: 'Formulate your intention clearly and briefly before the ritual begins.',
+    pm_cost_h: 'Pricing', pm_cost: 'Current participation pricing is available in the Kailash Dham Telegram bot.',
+    pm_report_h: 'Report', pm_report: 'The yagya report and accompanying information are shared in the Kailash Dham Telegram channel.',
   }
 };
 
@@ -5330,5 +5470,26 @@ function setLang(lang) {
   setLang(saved);
 })();
 </script>
+
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <a href="/polityka-konfidentsiynosti.html">Політика конфіденційності</a>
+      <a href="/publichna-oferta.html">Публічна оферта</a>
+      <a href="/polityka-povernennya-koshtiv.html">Політика повернення коштів</a>
+    </div>
+    <div class="footer-col">
+      <strong>Контактна інформація:</strong>
+      <span>ФОП Дяченко Дмитро Вікторович</span>
+      <span>ІПН: 2578013372</span>
+      <span>Адреса: Київська область, Вишгородський район, с. Димер, вул. Шевченко, 1, кв. 3</span>
+    </div>
+    <div class="footer-col">
+      <span>Телефон: <a class="footer-link" href="tel:+380638258339">+380638258339</a></span>
+      <span>Email: <a class="footer-link" href="mailto:dayanandagiri@gmail.com">dayanandagiri@gmail.com</a></span>
+      <span class="footer-note">З усіх питань щодо оплати, участі, доступу до матеріалів, перенесення або повернення коштів покупець може звернутися за вказаними контактами.</span>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
