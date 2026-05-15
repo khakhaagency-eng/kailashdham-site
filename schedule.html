@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Розклад заходів | Kailash Dham</title>
+  <meta name="description" content="Розклад групових яг'їй та пуджа Kailash Dham на травень 2026. Запишіться на найближчий ритуал.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kailashdham.space/schedule.html">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9943a;--gold-lt:#e0b86a;--dark:#0a0806;--w100:#fff;--w70:rgba(255,255,255,.7);--w45:rgba(255,255,255,.45)}
+html,body{background:var(--dark);color:var(--w100);font-family:'Montserrat',sans-serif;line-height:1.8;min-height:100vh}
+a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,8,6,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,148,58,.15);padding:14px 24px;display:flex;align-items:center;gap:14px}
+.logo{font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold);letter-spacing:.12em;text-transform:uppercase}
+.sep{color:var(--w45);font-size:.8rem}
+.back{font-size:.72rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.back:hover{color:var(--gold)}
+.lang-sw{margin-left:auto;display:flex;gap:6px}
+.lang-sw button{background:transparent;border:1px solid rgba(201,148,58,.3);color:var(--w45);font-family:'Montserrat',sans-serif;font-size:.68rem;letter-spacing:.08em;padding:4px 9px;cursor:pointer;transition:all .2s;text-transform:uppercase}
+.lang-sw button:hover,.lang-sw button.active{border-color:var(--gold);color:var(--gold)}
+.page-hero{margin-top:53px;background:linear-gradient(160deg,rgba(201,148,58,.1) 0%,rgba(10,8,6,1) 60%);padding:56px 24px 40px;text-align:center}
+.page-hero h1{font-family:'Cinzel',serif;font-size:clamp(1.1rem,3vw,1.5rem);color:var(--gold);letter-spacing:.1em;text-transform:uppercase}
+.page-hero .subtitle{color:var(--w45);font-size:.85rem;margin-top:10px;letter-spacing:.04em}
+.gold-line{width:40px;height:1px;background:var(--gold);margin:18px auto 0;opacity:.5}
+
+/* Calendar */
+.calendar-wrap{max-width:760px;margin:0 auto;padding:48px 24px 80px}
+.month-title{font-family:'Cinzel',serif;font-size:clamp(.9rem,2vw,1.1rem);color:var(--gold);letter-spacing:.12em;text-transform:uppercase;text-align:center;margin-bottom:32px}
+
+/* Mini calendar grid */
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:40px}
+.cal-day-name{font-size:.6rem;color:var(--w45);text-align:center;padding:6px 0;letter-spacing:.06em;text-transform:uppercase}
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.75rem;color:var(--w45);border-radius:3px;cursor:default;position:relative;gap:2px}
+.cal-day.empty{background:none}
+.cal-day.has-event{background:rgba(201,148,58,.12);border:1px solid rgba(201,148,58,.3);cursor:pointer;color:var(--gold-lt);font-weight:600;transition:all .2s}
+.cal-day.has-event:hover{background:rgba(201,148,58,.25);border-color:var(--gold)}
+.cal-day .dot{width:5px;height:5px;border-radius:50%;background:var(--gold);display:block}
+.cal-day.puja .dot{background:#e0c46a}
+.cal-day.yagya .dot{background:var(--gold)}
+
+/* Event cards */
+.events-list{display:flex;flex-direction:column;gap:16px}
+.evt-card{background:rgba(255,255,255,.03);border:1px solid rgba(201,148,58,.2);border-radius:3px;padding:24px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s}
+.evt-card:hover{border-color:rgba(201,148,58,.5)}
+.evt-date-col{text-align:center;min-width:52px;flex-shrink:0}
+.evt-day{font-family:'Cinzel',serif;font-size:1.8rem;color:var(--gold);line-height:1}
+.evt-month{font-size:.62rem;color:var(--w45);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.evt-sep{width:1px;background:rgba(201,148,58,.2);align-self:stretch;flex-shrink:0}
+.evt-body{flex:1}
+.evt-tag{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:6px}
+.evt-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--w100);line-height:1.3;margin-bottom:10px}
+.evt-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.evt-meta span{font-size:.75rem;color:var(--w45)}
+.evt-meta span b{color:var(--w70)}
+.evt-btn{display:inline-block;padding:10px 28px;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;cursor:pointer;text-decoration:none}
+.evt-btn:hover{background:var(--gold);color:var(--dark)}
+.evt-btn.puja-btn{border-color:rgba(201,148,58,.6);color:rgba(201,148,58,.8)}
+.evt-btn.puja-btn:hover{background:rgba(201,148,58,.8);color:var(--dark)}
+
+.legend{display:flex;gap:20px;justify-content:center;margin-bottom:24px}
+.legend-item{display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--w45)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+.cta-bot{text-align:center;padding:40px 24px;border-top:1px solid rgba(201,148,58,.12);margin-top:24px}
+.cta-bot p{color:var(--w45);font-size:.85rem;margin-bottom:20px}
+.bot-btn{display:inline-block;padding:14px 36px;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;transition:all .25s}
+.bot-btn:hover{background:var(--gold);color:var(--dark)}
+
+.site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px}
+.footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
+@media(max-width:640px){.footer-inner{grid-template-columns:1fr}}
+.footer-col{display:flex;flex-direction:column;gap:8px}
+.footer-col a{font-size:.72rem;color:rgba(201,148,58,.65);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:#c9943a}
+.footer-col strong{font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.04em;margin-bottom:4px}
+.footer-col span{color:rgba(255,255,255,.3);font-size:.72rem;line-height:1.6}
+.footer-col .footer-link{color:rgba(255,255,255,.3);text-decoration:none;font-size:.72rem;text-transform:none;letter-spacing:0}
+.footer-col .footer-link:hover{color:rgba(201,148,58,.7)}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a href="/" class="logo">Kailash Dham</a>
+    <span class="sep">›</span>
+    <span class="back" id="lbl_back">Розклад</span>
+    <div class="lang-sw">
+      <button data-lang="uk" onclick="setLang('uk')">UA</button>
+      <button data-lang="ru" onclick="setLang('ru')">RU</button>
+      <button data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <h1 id="lbl_title">Розклад заходів</h1>
+    <p class="subtitle" id="lbl_subtitle">Травень 2026</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="calendar-wrap">
+
+    <!-- Mini calendar -->
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#c9943a"></div><span id="lbl_yagya">Яг'я</span></div>
+      <div class="legend-item"><div class="legend-dot" style="background:#e0c46a"></div><span id="lbl_puja">Пуджа</span></div>
+    </div>
+
+    <div class="cal-grid" id="calGrid"></div>
+
+    <!-- Events list -->
+    <div class="month-title" id="lbl_events">Найближчі заходи</div>
+    <div class="events-list" id="eventsList"></div>
+
+    <div class="cta-bot">
+      <p id="lbl_bot_p">Реєструйтесь через Telegram-бот — там можна вибрати захід, заповнити форму та одразу перейти до оплати</p>
+      <a href="https://t.me/kailashdham_bot" target="_blank" rel="noopener" class="bot-btn" id="lbl_bot_btn">📲 Відкрити бот</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="/polityka-konfidentsiynosti.html">Політика конфіденційності</a>
+        <a href="/publichna-oferta.html">Публічна оферта</a>
+        <a href="/polityka-povernennya-koshtiv.html">Політика повернення коштів</a>
+      </div>
+      <div class="footer-col">
+        <strong>Контактна інформація:</strong>
+        <span>ФОП Дяченко Дмитро Вікторович</span>
+        <span>ІПН: 2578013372</span>
+        <span>Адреса: Київська область, Вишгородський район, с. Димер, вул. Шевченко, 1, кв. 3</span>
+      </div>
+      <div class="footer-col">
+        <span>Телефон: <a class="footer-link" href="tel:+380638258339">+380638258339</a></span>
+        <span>Email: <a class="footer-link" href="mailto:dayanandagiri@gmail.com">dayanandagiri@gmail.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+const EVENTS = [
+  { day:14, type:'puja',  pay:'https://secure.wayforpay.com/button/b1239221a1730',
+    names:{uk:"Групова пуджа Шіва", ru:"Групповая пуджа Шива", en:"Group Puja Shiva"},
+    time:"21:10", price:{uk:"від $10", ru:"от $10", en:"from $10"} },
+  { day:16, type:'yagya', pay:'https://secure.wayforpay.com/button/b4b6640952126',
+    names:{uk:"Групова яг'я Шані", ru:"Групповая ягья Шани", en:"Group Yagya Shani"},
+    time:"20:45", price:{uk:"від $39", ru:"от $39", en:"from $39"} },
+  { day:22, type:'yagya', pay:'https://secure.wayforpay.com/button/b4b6640952126',
+    names:{uk:"Групова яг'я Лакшмі", ru:"Групповая ягья Лакшми", en:"Group Yagya Lakshmi"},
+    time:"20:50", price:{uk:"від $39", ru:"от $39", en:"from $39"} },
+  { day:26, type:'puja',  pay:'https://secure.wayforpay.com/button/b1239221a1730',
+    names:{uk:"Групова пуджа Вішну", ru:"Групповая пуджа Вишну", en:"Group Puja Vishnu"},
+    time:"11:25", price:{uk:"від $10", ru:"от $10", en:"from $10"} },
+  { day:28, type:'puja',  pay:'https://secure.wayforpay.com/button/b1239221a1730',
+    names:{uk:"Групова пуджа Шіва", ru:"Групповая пуджа Шива", en:"Group Puja Shiva"},
+    time:"21:10", price:{uk:"від $10", ru:"от $10", en:"from $10"} },
+  { day:31, type:'yagya', pay:'https://secure.wayforpay.com/button/b4b6640952126',
+    names:{uk:"Групова яг'я Махамрітюнджая", ru:"Групповая ягья Маха Мритюнджая", en:"Group Yagya Maha Mrityunjaya"},
+    time:"12:00", price:{uk:"від $39", ru:"от $39", en:"from $39"} },
+];
+
+const UI = {
+  uk:{ back:"Розклад", title:"Розклад заходів", subtitle:"Травень 2026",
+       yagya:"Яг'я", puja:"Пуджа", events:"Найближчі заходи",
+       tag_yagya:"Групова яг'я", tag_puja:"Групова пуджа",
+       lbl_time:"Час", lbl_price:"Ціна", lbl_note:"оплата в гривнях за курсом НБУ",
+       btn:"Перейти до оплати",
+       bot_p:"Реєструйтесь через Telegram-бот — там можна вибрати захід, заповнити форму та одразу перейти до оплати",
+       bot_btn:"📲 Відкрити бот",
+       days:["Пн","Вт","Ср","Чт","Пт","Сб","Нд"],
+       months:["Травень"] },
+  ru:{ back:"Расписание", title:"Расписание мероприятий", subtitle:"Май 2026",
+       yagya:"Ягья", puja:"Пуджа", events:"Ближайшие мероприятия",
+       tag_yagya:"Групповая ягья", tag_puja:"Групповая пуджа",
+       lbl_time:"Время", lbl_price:"Цена", lbl_note:"оплата в гривнах по курсу НБУ",
+       btn:"Перейти к оплате",
+       bot_p:"Регистрируйтесь через Telegram-бот — там можно выбрать мероприятие, заполнить форму и сразу перейти к оплате",
+       bot_btn:"📲 Открыть бот",
+       days:["Пн","Вт","Ср","Чт","Пт","Сб","Вс"],
+       months:["Май"] },
+  en:{ back:"Schedule", title:"Event Schedule", subtitle:"May 2026",
+       yagya:"Yagya", puja:"Puja", events:"Upcoming events",
+       tag_yagya:"Group Yagya", tag_puja:"Group Puja",
+       lbl_time:"Time", lbl_price:"Price", lbl_note:"payment in UAH at NBU rate",
+       btn:"Proceed to payment",
+       bot_p:"Register via Telegram bot — choose an event, fill in the form and proceed to payment",
+       bot_btn:"📲 Open bot",
+       days:["Mo","Tu","We","Th","Fr","Sa","Su"],
+       months:["May"] },
+};
+
+const eventDays = new Set(EVENTS.map(e=>e.day));
+
+function buildCalendar(lang) {
+  const u = UI[lang];
+  const grid = document.getElementById('calGrid');
+  grid.innerHTML = '';
+  // Day names (Mon-Sun)
+  u.days.forEach(d => {
+    const el = document.createElement('div');
+    el.className = 'cal-day-name';
+    el.textContent = d;
+    grid.appendChild(el);
+  });
+  // May 2026: starts on Friday (index 4, 0=Mon)
+  const startOffset = 4;
+  const totalDays = 31;
+  for(let i=0;i<startOffset;i++){
+    const el=document.createElement('div'); el.className='cal-day empty'; grid.appendChild(el);
+  }
+  for(let d=1;d<=totalDays;d++){
+    const evt = EVENTS.find(e=>e.day===d);
+    const el = document.createElement('div');
+    if(evt){
+      el.className = `cal-day has-event ${evt.type}`;
+      el.innerHTML = `${d}<span class="dot"></span>`;
+      el.title = evt.names[lang];
+      el.onclick = () => document.getElementById(`evt-${d}`).scrollIntoView({behavior:'smooth',block:'center'});
+    } else {
+      el.className = 'cal-day';
+      el.textContent = d;
+    }
+    grid.appendChild(el);
+  }
+}
+
+function buildEvents(lang) {
+  const u = UI[lang];
+  const list = document.getElementById('eventsList');
+  list.innerHTML = '';
+  EVENTS.forEach(evt => {
+    const tag = evt.type==='yagya' ? u.tag_yagya : u.tag_puja;
+    const card = document.createElement('div');
+    card.className = 'evt-card';
+    card.id = `evt-${evt.day}`;
+    card.innerHTML = `
+      <div class="evt-date-col">
+        <div class="evt-day">${evt.day}</div>
+        <div class="evt-month">${u.months[0]}</div>
+      </div>
+      <div class="evt-sep"></div>
+      <div class="evt-body">
+        <div class="evt-tag">${tag}</div>
+        <div class="evt-name">${evt.names[lang]}</div>
+        <div class="evt-meta">
+          <span>🕐 <b>${evt.time}</b></span>
+          <span>💰 <b>${evt.price[lang]}</b></span>
+          <span><i>${u.lbl_note}</i></span>
+        </div>
+        <a href="${evt.pay}" target="_blank" rel="noopener" class="evt-btn ${evt.type==='puja'?'puja-btn':''}">${u.btn}</a>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+
+function setLang(lang) {
+  localStorage.setItem('kd_lang', lang);
+  document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  const u = UI[lang];
+  document.getElementById('lbl_back').textContent = u.back;
+  document.getElementById('lbl_title').textContent = u.title;
+  document.getElementById('lbl_subtitle').textContent = u.subtitle;
+  document.getElementById('lbl_yagya').textContent = u.yagya;
+  document.getElementById('lbl_puja').textContent = u.puja;
+  document.getElementById('lbl_events').textContent = u.events;
+  document.getElementById('lbl_bot_p').textContent = u.bot_p;
+  document.getElementById('lbl_bot_btn').textContent = u.bot_btn;
+  document.title = u.title + ' | Kailash Dham';
+  buildCalendar(lang);
+  buildEvents(lang);
+}
+
+(function(){ const l=localStorage.getItem('kd_lang')||'uk'; setLang(l); })();
+  </script>
+</body>
+</html>
