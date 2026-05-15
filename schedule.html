@@ -52,13 +52,10 @@ a{color:var(--gold);text-decoration:none}a:hover{color:var(--gold-lt)}
 .evt-body{flex:1}
 .evt-tag{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:6px}
 .evt-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--w100);line-height:1.3;margin-bottom:10px}
-.evt-meta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+.evt-meta{display:flex;flex-wrap:wrap;gap:12px}
 .evt-meta span{font-size:.75rem;color:var(--w45)}
 .evt-meta span b{color:var(--w70)}
-.evt-btn{display:inline-block;padding:10px 28px;border:1px solid var(--gold);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;transition:all .25s;cursor:pointer;text-decoration:none}
-.evt-btn:hover{background:var(--gold);color:var(--dark)}
-.evt-btn.puja-btn{border-color:rgba(201,148,58,.6);color:rgba(201,148,58,.8)}
-.evt-btn.puja-btn:hover{background:rgba(201,148,58,.8);color:var(--dark)}
+.evt-price-note{font-size:.68rem;color:var(--w45);font-style:italic;margin-top:6px;opacity:.7}
 
 .legend{display:flex;gap:20px;justify-content:center;margin-bottom:24px}
 .legend-item{display:flex;align-items:center;gap:6px;font-size:.7rem;color:var(--w45)}
@@ -166,7 +163,6 @@ const UI = {
        yagya:"Яг'я", puja:"Пуджа", events:"Найближчі заходи",
        tag_yagya:"Групова яг'я", tag_puja:"Групова пуджа",
        lbl_time:"Час", lbl_price:"Ціна", lbl_note:"оплата в гривнях за курсом НБУ",
-       btn:"Перейти до оплати",
        bot_p:"Реєструйтесь через Telegram-бот — там можна вибрати захід, заповнити форму та одразу перейти до оплати",
        bot_btn:"📲 Відкрити бот",
        days:["Пн","Вт","Ср","Чт","Пт","Сб","Нд"],
@@ -247,9 +243,8 @@ function buildEvents(lang) {
         <div class="evt-meta">
           <span>🕐 <b>${evt.time}</b></span>
           <span>💰 <b>${evt.price[lang]}</b></span>
-          <span><i>${u.lbl_note}</i></span>
         </div>
-        <a href="${evt.pay}" target="_blank" rel="noopener" class="evt-btn ${evt.type==='puja'?'puja-btn':''}">${u.btn}</a>
+        <div class="evt-price-note">${u.lbl_note}</div>
       </div>`;
     list.appendChild(card);
   });
