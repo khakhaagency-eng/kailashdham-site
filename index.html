@@ -2383,6 +2383,10 @@
     color: var(--gold);
     white-space: nowrap;
   }
+  @media(max-width: 480px) {
+    .mp-stage-label span { white-space: normal; text-align: center; }
+    .mp-stage-line { display: none; }
+  }
 
   .mp-stages {
     display: grid;
