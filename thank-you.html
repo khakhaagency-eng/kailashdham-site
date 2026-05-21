@@ -13,6 +13,7 @@
     color: #e0e0e0;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -27,11 +28,15 @@
     text-align: center;
   }
   .icon { font-size: 56px; margin-bottom: 20px; }
-  h1 { font-size: 24px; color: #c9a96e; margin-bottom: 12px; }
-  p { font-size: 15px; color: #999; line-height: 1.6; margin-bottom: 8px; }
+  h1 { font-size: 24px; color: #c9a96e; margin-bottom: 16px; }
+  .line1 { font-size: 16px; color: #e0e0e0; font-weight: 600; margin-bottom: 8px; }
+  .line2 { font-size: 14px; color: #999; line-height: 1.6; margin-bottom: 4px; }
+  .channel-link { font-size: 14px; color: #c9a96e; line-height: 1.6; margin-bottom: 0; }
+  .channel-link a { color: #c9a96e; text-decoration: none; border-bottom: 1px solid rgba(201,169,110,.35); }
+  .channel-link a:hover { border-bottom-color: #c9a96e; }
+  .btn-wrap { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
   .btn {
     display: inline-block;
-    margin-top: 32px;
     background: #c9a96e;
     color: #0f0f0f;
     text-decoration: none;
@@ -42,11 +47,24 @@
     transition: background .2s;
   }
   .btn:hover { background: #b8945a; }
-  .sub { margin-top: 16px; font-size: 13px; color: #555; }
+  .btn-outline {
+    display: inline-block;
+    background: transparent;
+    color: #c9a96e;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 1px solid rgba(201,169,110,.4);
+    transition: border-color .2s, color .2s;
+  }
+  .btn-outline:hover { border-color: #c9a96e; }
+  .sub { margin-top: 12px; font-size: 13px; color: #555; }
 
-.site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px}
+.site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px;margin-top:40px;width:100%}
 .footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
-@media(max-width:640px){.footer-inner{grid-template-columns:1fr}}
+@media(max-width:640px){.footer-inner{grid-template-columns:1fr}.card{padding:36px 24px}}
 .footer-col{display:flex;flex-direction:column;gap:8px}
 .footer-col a{font-size:.72rem;color:rgba(201,148,58,.65);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:color .2s}
 .footer-col a:hover{color:#c9943a}
@@ -55,37 +73,49 @@
 .footer-col .footer-link{color:rgba(255,255,255,.3);text-decoration:none;font-size:.72rem;text-transform:none;letter-spacing:0}
 .footer-col .footer-link:hover{color:rgba(201,148,58,.7)}
 .footer-note{color:rgba(255,255,255,.2);font-size:.67rem;font-style:italic;margin-top:6px}
-  </style>
+</style>
 </head>
 <body>
 <div class="card">
   <div class="icon">🙏</div>
   <h1 id="title">Дякуємо за оплату!</h1>
-  <p id="line1">Ваш платіж отримано.</p>
-  <p id="line2">Наш менеджер зв'яжеться з вами найближчим часом для підтвердження участі.</p>
-  <a href="https://t.me/kailashdham_bot" class="btn" id="btn">Повернутися в бот</a>
+  <p class="line1" id="line1">Оплата є підтвердженням участі.</p>
+  <p class="line2" id="line2">Додаткові запитання можна поставити в каналі:</p>
+  <p class="channel-link"><a href="https://t.me/kailas_dham" target="_blank" id="channel">t.me/kailas_dham</a></p>
+  <div class="btn-wrap">
+    <a href="/#zaochna-uchast" class="btn-outline" id="btn-tips">📋 Рекомендації щодо заочної участі</a>
+    <a href="https://t.me/kailashdham_bot" class="btn" id="btn">Повернутися в бот</a>
+  </div>
   <p class="sub" id="sub">@kailashdham_bot</p>
 </div>
 
 <script>
-const lang = localStorage.getItem('kd_lang') || navigator.language.startsWith('ru') ? 'ru' : navigator.language.startsWith('en') ? 'en' : 'uk';
+const _stored = localStorage.getItem('kd_lang');
+const _nav = navigator.language || '';
+const lang = _stored || (_nav.startsWith('ru') ? 'ru' : _nav.startsWith('en') ? 'en' : 'uk');
 const texts = {
   uk: {
     title: 'Дякуємо за оплату!',
-    line1: 'Ваш платіж отримано.',
-    line2: 'Наш менеджер зв\'яжеться з вами найближчим часом для підтвердження участі.',
+    line1: 'Оплата є підтвердженням участі.',
+    line2: 'Додаткові запитання можна поставити в каналі:',
+    channel: 't.me/kailas_dham',
+    btnTips: '📋 Рекомендації щодо заочної участі',
     btn: 'Повернутися в бот',
   },
   ru: {
     title: 'Спасибо за оплату!',
-    line1: 'Ваш платёж получен.',
-    line2: 'Наш менеджер свяжется с вами в ближайшее время для подтверждения участия.',
+    line1: 'Оплата является подтверждением участия.',
+    line2: 'Дополнительные вопросы можно задать в канале:',
+    channel: 't.me/kailas_dham',
+    btnTips: '📋 Рекомендации для дистанционного участия',
     btn: 'Вернуться в бот',
   },
   en: {
     title: 'Thank you for your payment!',
-    line1: 'Your payment has been received.',
-    line2: 'Our manager will contact you shortly to confirm your participation.',
+    line1: 'Payment confirms your participation.',
+    line2: 'You can ask additional questions in the channel:',
+    channel: 't.me/kailas_dham',
+    btnTips: '📋 Remote participation guide',
     btn: 'Return to bot',
   },
 };
@@ -93,6 +123,8 @@ const t = texts[lang] || texts.uk;
 document.getElementById('title').textContent = t.title;
 document.getElementById('line1').textContent = t.line1;
 document.getElementById('line2').textContent = t.line2;
+document.getElementById('channel').textContent = t.channel;
+document.getElementById('btn-tips').textContent = t.btnTips;
 document.getElementById('btn').textContent = t.btn;
 </script>
 

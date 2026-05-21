@@ -3222,6 +3222,43 @@
 </style>
 
 <!-- ═══════════════════════════════════════════ -->
+<!-- BLOCK 7.5: РЕКОМЕНДАЦІЇ ЗАОЧНОЇ УЧАСТІ   -->
+<!-- ═══════════════════════════════════════════ -->
+<style>
+.zaochna-section{background:#0a0907;padding:80px 24px;position:relative}
+.zaochna-inner{max-width:820px;margin:0 auto}
+.zaochna-label{font-size:.72rem;letter-spacing:.18em;color:#c9943a;text-transform:uppercase;margin-bottom:14px}
+.zaochna-title{font-family:'Cormorant Garamond','Cormorant',Georgia,serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:600;letter-spacing:.06em;color:#e8d9c0;line-height:1.2;margin-bottom:36px}
+.zaochna-tips{display:flex;flex-direction:column;gap:0;margin-bottom:36px}
+.zt-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(201,148,58,.1)}
+.zt-item:first-child{border-top:1px solid rgba(201,148,58,.1)}
+.zt-num{min-width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,148,58,.4);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#c9943a;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;flex-shrink:0;margin-top:2px}
+.zt-text{font-size:.95rem;color:#bbb;line-height:1.65}
+.zt-text strong{color:#e8d9c0;font-weight:600}
+.zaochna-note{font-size:.85rem;color:#666;font-style:italic;margin-bottom:36px;padding-left:48px}
+.zaochna-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(201,148,58,.45);color:#c9943a;text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:8px;transition:background .2s,border-color .2s}
+.zaochna-btn:hover{background:rgba(201,148,58,.07);border-color:#c9943a}
+@media(max-width:600px){.zaochna-section{padding:56px 20px}.zaochna-note{padding-left:0}}
+</style>
+<section class="zaochna-section" id="zaochna-uchast">
+  <div class="zaochna-inner">
+    <p class="zaochna-label" data-i18n="zaochna_label">Дистанційна участь</p>
+    <h2 class="zaochna-title" data-i18n="zaochna_title">РЕКОМЕНДАЦІЇ<br>ЩОДО ЗАОЧНОЇ УЧАСТІ</h2>
+    <div class="zaochna-tips" id="zaochna-tips">
+      <div class="zt-item"><div class="zt-num">1</div><div class="zt-text" data-i18n="zt1"><strong>Знайте точний час проведення</strong> — будьте готові заздалегідь.</div></div>
+      <div class="zt-item"><div class="zt-num">2</div><div class="zt-text" data-i18n="zt2"><strong>Сформулюйте санкальпу</strong> — ваш намір у кількох словах, чітко і щиро.</div></div>
+      <div class="zt-item"><div class="zt-num">3</div><div class="zt-text" data-i18n="zt3">За 30–60 хвилин до початку <strong>прийміть душ, одягніть чисте</strong>, утримайтеся від важкої їжі.</div></div>
+      <div class="zt-item"><div class="zt-num">4</div><div class="zt-text" data-i18n="zt4">У момент проведення <strong>перебувайте в тихому місці</strong>, утримуйте свій намір і думки про яг'ю.</div></div>
+      <div class="zt-item"><div class="zt-num">5</div><div class="zt-text" data-i18n="zt5">Можна <strong>запалити свічку або благовоння</strong>, прочитати мантру — це поглиблює зв'язок із практикою.</div></div>
+      <div class="zt-item"><div class="zt-num">6</div><div class="zt-text" data-i18n="zt6">Після завершення <strong>зберігайте спокій</strong> — не поспішайте одразу повертатися до звичної метушні.</div></div>
+      <div class="zt-item"><div class="zt-num">7</div><div class="zt-text" data-i18n="zt7">Фото- або відеозвіт ви отримаєте <strong>відповідно до вашого формату участі</strong>.</div></div>
+    </div>
+    <p class="zaochna-note" data-i18n="zaochna_note">З додатковими запитаннями — у канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a></p>
+    <a href="https://t.me/kailashdham_bot" class="zaochna-btn" data-i18n="zaochna_btn">Пройти підбір яг'ї →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════ -->
 <!-- BLOCK 8: ВЫБОР ЯГЬИ ПО ЗАПРОСУ           -->
 <!-- ═══════════════════════════════════════════ -->
 <section class="yagyas-section" id="yagyas">
@@ -5122,6 +5159,17 @@ const i18n = {
     pm_thanks: 'Дякуємо за проявлену повагу. — Kailash Dham',
     pm_report_label: "Звіт про яг'ю та супровідна інформація —", pm_report_link: 'Telegram-канал Kailash Dham',
     pm_tg_btn: 'Telegram-канал — анонси та звіти',
+    zaochna_label: 'Дистанційна участь',
+    zaochna_title: 'РЕКОМЕНДАЦІЇ<br>ЩОДО ЗАОЧНОЇ УЧАСТІ',
+    zt1: '<strong>Знайте точний час проведення</strong> — будьте готові заздалегідь.',
+    zt2: '<strong>Сформулюйте санкальпу</strong> — ваш намір у кількох словах, чітко і щиро.',
+    zt3: 'За 30–60 хвилин до початку <strong>прийміть душ, одягніть чисте</strong>, утримайтеся від важкої їжі.',
+    zt4: 'У момент проведення <strong>перебувайте в тихому місці</strong>, утримуйте свій намір і думки про яг\'ю.',
+    zt5: 'Можна <strong>запалити свічку або благовоння</strong>, прочитати мантру — це поглиблює зв\'язок із практикою.',
+    zt6: 'Після завершення <strong>зберігайте спокій</strong> — не поспішайте одразу повертатися до звичної метушні.',
+    zt7: 'Фото- або відеозвіт ви отримаєте <strong>відповідно до вашого формату участі</strong>.',
+    zaochna_note: 'З додатковими запитаннями — у канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_btn: 'Пройти підбір яг\'ї →',
   },
   ru: {
     logo_sub: 'Space of Practices',
@@ -5351,6 +5399,17 @@ const i18n = {
     pm_thanks: 'Благодарим за проявленное уважение. — Kailash Dham',
     pm_report_label: 'Отчёт о ягье и сопроводительная информация —', pm_report_link: 'Telegram-канал Kailash Dham',
     pm_tg_btn: 'Telegram-канал — анонсы и отчёты',
+    zaochna_label: 'Дистанционное участие',
+    zaochna_title: 'РЕКОМЕНДАЦИИ<br>ДЛЯ ДИСТАНЦИОННОГО УЧАСТИЯ',
+    zt1: '<strong>Знайте точное время проведения</strong> — будьте готовы заранее.',
+    zt2: '<strong>Сформулируйте санкальпу</strong> — своё намерение в нескольких словах, чётко и искренне.',
+    zt3: 'За 30–60 минут до начала <strong>примите душ, наденьте чистое</strong>, воздержитесь от тяжёлой пищи.',
+    zt4: 'В момент проведения <strong>находитесь в тихом месте</strong>, удерживайте своё намерение и мысли о ягье.',
+    zt5: 'Можно <strong>зажечь свечу или благовония</strong>, прочитать мантру — это углубляет связь с практикой.',
+    zt6: 'После завершения <strong>сохраняйте спокойствие</strong> — не спешите сразу возвращаться к привычной суете.',
+    zt7: 'Фото- или видеоотчёт вы получите <strong>в соответствии с вашим форматом участия</strong>.',
+    zaochna_note: 'По дополнительным вопросам — в канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_btn: 'Подобрать ягью →',
   },
   en: {
     logo_sub: 'Space of Practices',
@@ -5580,6 +5639,17 @@ const i18n = {
     pm_thanks: 'Thank you for your respect. — Kailash Dham',
     pm_report_label: 'The yagya report and accompanying information —', pm_report_link: 'Kailash Dham Telegram channel',
     pm_tg_btn: 'Telegram channel — announcements & reports',
+    zaochna_label: 'Remote participation',
+    zaochna_title: 'REMOTE<br>PARTICIPATION GUIDE',
+    zt1: '<strong>Know the exact time of the ceremony</strong> — be ready in advance.',
+    zt2: '<strong>Formulate your sankalpa</strong> — your intention in a few clear, sincere words.',
+    zt3: 'Thirty to sixty minutes before the start, <strong>shower, put on clean clothes</strong>, and avoid heavy food.',
+    zt4: 'During the ceremony, <strong>be in a quiet place</strong> and hold your intention and thoughts on the yagya.',
+    zt5: 'You may <strong>light a candle or incense</strong> and recite a mantra — this deepens your connection with the practice.',
+    zt6: 'After the ceremony, <strong>remain calm</strong> — don\'t rush back into the everyday bustle.',
+    zt7: 'A photo or video report will be sent to you <strong>according to your participation format</strong>.',
+    zaochna_note: 'For additional questions, visit the channel: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_btn: 'Find your yagya →',
   }
 };
 
