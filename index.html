@@ -3225,35 +3225,31 @@
 <!-- BLOCK 7.5: РЕКОМЕНДАЦІЇ ЗАОЧНОЇ УЧАСТІ   -->
 <!-- ═══════════════════════════════════════════ -->
 <style>
-.zaochna-section{background:#0a0907;padding:80px 24px;position:relative}
+.zaochna-section{background:#0a0907;padding:80px 24px}
 .zaochna-inner{max-width:820px;margin:0 auto}
-.zaochna-label{font-size:.72rem;letter-spacing:.18em;color:#c9943a;text-transform:uppercase;margin-bottom:14px}
 .zaochna-title{font-family:'Cormorant Garamond','Cormorant',Georgia,serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:600;letter-spacing:.06em;color:#e8d9c0;line-height:1.2;margin-bottom:36px}
-.zaochna-tips{display:flex;flex-direction:column;gap:0;margin-bottom:36px}
-.zt-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid rgba(201,148,58,.1)}
-.zt-item:first-child{border-top:1px solid rgba(201,148,58,.1)}
-.zt-num{min-width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,148,58,.4);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#c9943a;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;flex-shrink:0;margin-top:2px}
-.zt-text{font-size:.95rem;color:#bbb;line-height:1.65}
-.zt-text strong{color:#e8d9c0;font-weight:600}
-.zaochna-note{font-size:.85rem;color:#666;font-style:italic;margin-bottom:36px;padding-left:48px}
-.zaochna-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(201,148,58,.45);color:#c9943a;text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:8px;transition:background .2s,border-color .2s}
+.zaochna-body .z-join{font-size:.95rem;color:#e8d9c0;line-height:1.6;margin-bottom:16px;padding:16px 20px;background:rgba(201,148,58,.07);border-left:2px solid #c9943a;border-radius:0 8px 8px 0}
+.zaochna-body .z-link{color:#c9943a;text-decoration:none;border-bottom:1px solid rgba(201,148,58,.4)}
+.zaochna-body .z-link:hover{border-bottom-color:#c9943a}
+.zaochna-body .z-p{font-size:.88rem;color:#777;line-height:1.7;margin-bottom:6px}
+.zaochna-body .z-intro{font-size:.95rem;color:#bbb;line-height:1.6;margin:28px 0 4px;font-style:italic}
+.zaochna-body .z-level{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(201,148,58,.1)}
+.zaochna-body .z-level:first-of-type{border-top:1px solid rgba(201,148,58,.1)}
+.zaochna-body .z-lnum{min-width:32px;height:32px;border-radius:50%;border:1px solid rgba(201,148,58,.4);display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#c9943a;font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;flex-shrink:0;margin-top:2px}
+.zaochna-body .z-ltext{font-size:.9rem;color:#bbb;line-height:1.65}
+.zaochna-body .z-lhead{color:#e8d9c0;font-weight:600;margin-bottom:8px;font-size:.95rem}
+.zaochna-body .z-ltext p{margin-bottom:8px}
+.zaochna-body .z-list{list-style:none;padding-left:0;margin:4px 0 12px}
+.zaochna-body .z-list li{padding:2px 0;color:#999}
+.zaochna-body .z-list li::before{content:'— ';color:rgba(201,148,58,.6)}
+.zaochna-btn{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid rgba(201,148,58,.45);color:#c9943a;text-decoration:none;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:14px 28px;border-radius:8px;transition:background .2s,border-color .2s;margin-top:32px}
 .zaochna-btn:hover{background:rgba(201,148,58,.07);border-color:#c9943a}
-@media(max-width:600px){.zaochna-section{padding:56px 20px}.zaochna-note{padding-left:0}}
+@media(max-width:600px){.zaochna-section{padding:56px 20px}}
 </style>
 <section class="zaochna-section" id="zaochna-uchast">
   <div class="zaochna-inner">
-    <p class="zaochna-label" data-i18n="zaochna_label">Дистанційна участь</p>
-    <h2 class="zaochna-title" data-i18n="zaochna_title">РЕКОМЕНДАЦІЇ<br>ЩОДО ЗАОЧНОЇ УЧАСТІ</h2>
-    <div class="zaochna-tips" id="zaochna-tips">
-      <div class="zt-item"><div class="zt-num">1</div><div class="zt-text" data-i18n="zt1"><strong>Знайте точний час проведення</strong> — будьте готові заздалегідь.</div></div>
-      <div class="zt-item"><div class="zt-num">2</div><div class="zt-text" data-i18n="zt2"><strong>Сформулюйте санкальпу</strong> — ваш намір у кількох словах, чітко і щиро.</div></div>
-      <div class="zt-item"><div class="zt-num">3</div><div class="zt-text" data-i18n="zt3">За 30–60 хвилин до початку <strong>прийміть душ, одягніть чисте</strong>, утримайтеся від важкої їжі.</div></div>
-      <div class="zt-item"><div class="zt-num">4</div><div class="zt-text" data-i18n="zt4">У момент проведення <strong>перебувайте в тихому місці</strong>, утримуйте свій намір і думки про яг'ю.</div></div>
-      <div class="zt-item"><div class="zt-num">5</div><div class="zt-text" data-i18n="zt5">Можна <strong>запалити свічку або благовоння</strong>, прочитати мантру — це поглиблює зв'язок із практикою.</div></div>
-      <div class="zt-item"><div class="zt-num">6</div><div class="zt-text" data-i18n="zt6">Після завершення <strong>зберігайте спокій</strong> — не поспішайте одразу повертатися до звичної метушні.</div></div>
-      <div class="zt-item"><div class="zt-num">7</div><div class="zt-text" data-i18n="zt7">Фото- або відеозвіт ви отримаєте <strong>відповідно до вашого формату участі</strong>.</div></div>
-    </div>
-    <p class="zaochna-note" data-i18n="zaochna_note">З додатковими запитаннями — у канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a></p>
+    <h2 class="zaochna-title" data-i18n="zaochna_title">РЕКОМЕНДАЦІЇ ДЛЯ ЗАОЧНОЇ УЧАСТІ У ЯГ'Ї</h2>
+    <div class="zaochna-body" data-i18n="zaochna_body"><p class="z-join">☝️ Перед участю обов'язково приєднайтеся до групи Kailash Dham! <a href="https://t.me/kailas_dham" target="_blank" class="z-link">посилання</a></p><p class="z-p">У групі публікуються повідомлення про початок і завершення яг'ї, а також фото- та відеозвіти після проведення практики.</p><p class="z-p">Також у каналі розміщується розклад заходів та інша корисна інформація.</p><p class="z-intro">Існує декілька рівнів включення у процес заочної участі:</p><div class="z-level"><div class="z-lnum">1</div><div class="z-ltext"><p class="z-lhead">Якщо ви зайняті або не маєте можливості бути включеними у процес.</p><p>У такому випадку ви подумки з нами, а всі дії під час яг'ї виконуються пуджарі від вашого імені.</p></div></div><div class="z-level"><div class="z-lnum">2</div><div class="z-ltext"><p class="z-lhead">Якщо ви знайомі з ведичною або східною традицією.</p><p>Під час проведення яг'ї ви можете самостійно читати мантру та утримувати увагу на своїй санкальпі.</p></div></div><div class="z-level"><div class="z-lnum">3</div><div class="z-ltext"><p class="z-lhead">Для більш глибокого включення у процес.</p><p>Напередодні яг'ї рекомендується посильний піст.</p><p>Перед початком бажано:</p><ul class="z-list"><li>прийняти душ;</li><li>вдягнути чистий одяг;</li><li>підготувати чистий і спокійний простір;</li><li>за бажанням запалити пахощі або світильник.</li></ul><p>Після повідомлення про початок яг'ї:</p><ul class="z-list"><li>зосередьтеся на своїй санкальпі;</li><li>читайте мантру;</li><li>зберігайте спокійний та уважний стан.</li></ul><p>Після завершення практики рекомендується деякий час побути у тиші та внутрішній вдячності.</p></div></div><div class="z-level"><div class="z-lnum">4</div><div class="z-ltext"><p class="z-lhead">Якщо у вас виникають запитання</p><p>Ви можете поставити їх у чаті групи Kailash Dham. <a href="https://t.me/kailas_dham" target="_blank" class="z-link">посилання</a></p></div></div></div>
     <a href="https://t.me/kailashdham_bot" class="zaochna-btn" data-i18n="zaochna_btn">Пройти підбір яг'ї →</a>
   </div>
 </section>
@@ -5159,16 +5155,8 @@ const i18n = {
     pm_thanks: 'Дякуємо за проявлену повагу. — Kailash Dham',
     pm_report_label: "Звіт про яг'ю та супровідна інформація —", pm_report_link: 'Telegram-канал Kailash Dham',
     pm_tg_btn: 'Telegram-канал — анонси та звіти',
-    zaochna_label: 'Дистанційна участь',
-    zaochna_title: 'РЕКОМЕНДАЦІЇ<br>ЩОДО ЗАОЧНОЇ УЧАСТІ',
-    zt1: '<strong>Знайте точний час проведення</strong> — будьте готові заздалегідь.',
-    zt2: '<strong>Сформулюйте санкальпу</strong> — ваш намір у кількох словах, чітко і щиро.',
-    zt3: 'За 30–60 хвилин до початку <strong>прийміть душ, одягніть чисте</strong>, утримайтеся від важкої їжі.',
-    zt4: 'У момент проведення <strong>перебувайте в тихому місці</strong>, утримуйте свій намір і думки про яг\'ю.',
-    zt5: 'Можна <strong>запалити свічку або благовоння</strong>, прочитати мантру — це поглиблює зв\'язок із практикою.',
-    zt6: 'Після завершення <strong>зберігайте спокій</strong> — не поспішайте одразу повертатися до звичної метушні.',
-    zt7: 'Фото- або відеозвіт ви отримаєте <strong>відповідно до вашого формату участі</strong>.',
-    zaochna_note: 'З додатковими запитаннями — у канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_title: 'РЕКОМЕНДАЦІЇ ДЛЯ ЗАОЧНОЇ УЧАСТІ У ЯГ\'Ї',
+    zaochna_body: '<p class="z-join">☝️ Перед участю обов\'язково приєднайтеся до групи Kailash Dham! <a href="https://t.me/kailas_dham" target="_blank" class="z-link">посилання</a></p><p class="z-p">У групі публікуються повідомлення про початок і завершення яг\'ї, а також фото- та відеозвіти після проведення практики.</p><p class="z-p">Також у каналі розміщується розклад заходів та інша корисна інформація.</p><p class="z-intro">Існує декілька рівнів включення у процес заочної участі:</p><div class="z-level"><div class="z-lnum">1</div><div class="z-ltext"><p class="z-lhead">Якщо ви зайняті або не маєте можливості бути включеними у процес.</p><p>У такому випадку ви подумки з нами, а всі дії під час яг\'ї виконуються пуджарі від вашого імені.</p></div></div><div class="z-level"><div class="z-lnum">2</div><div class="z-ltext"><p class="z-lhead">Якщо ви знайомі з ведичною або східною традицією.</p><p>Під час проведення яг\'ї ви можете самостійно читати мантру та утримувати увагу на своїй санкальпі.</p></div></div><div class="z-level"><div class="z-lnum">3</div><div class="z-ltext"><p class="z-lhead">Для більш глибокого включення у процес.</p><p>Напередодні яг\'ї рекомендується посильний піст.</p><p>Перед початком бажано:</p><ul class="z-list"><li>прийняти душ;</li><li>вдягнути чистий одяг;</li><li>підготувати чистий і спокійний простір;</li><li>за бажанням запалити пахощі або світильник.</li></ul><p>Після повідомлення про початок яг\'ї:</p><ul class="z-list"><li>зосередьтеся на своїй санкальпі;</li><li>читайте мантру;</li><li>зберігайте спокійний та уважний стан.</li></ul><p>Після завершення практики рекомендується деякий час побути у тиші та внутрішній вдячності.</p></div></div><div class="z-level"><div class="z-lnum">4</div><div class="z-ltext"><p class="z-lhead">Якщо у вас виникають запитання</p><p>Ви можете поставити їх у чаті групи Kailash Dham. <a href="https://t.me/kailas_dham" target="_blank" class="z-link">посилання</a></p></div></div>',
     zaochna_btn: 'Пройти підбір яг\'ї →',
   },
   ru: {
@@ -5399,16 +5387,8 @@ const i18n = {
     pm_thanks: 'Благодарим за проявленное уважение. — Kailash Dham',
     pm_report_label: 'Отчёт о ягье и сопроводительная информация —', pm_report_link: 'Telegram-канал Kailash Dham',
     pm_tg_btn: 'Telegram-канал — анонсы и отчёты',
-    zaochna_label: 'Дистанционное участие',
-    zaochna_title: 'РЕКОМЕНДАЦИИ<br>ДЛЯ ДИСТАНЦИОННОГО УЧАСТИЯ',
-    zt1: '<strong>Знайте точное время проведения</strong> — будьте готовы заранее.',
-    zt2: '<strong>Сформулируйте санкальпу</strong> — своё намерение в нескольких словах, чётко и искренне.',
-    zt3: 'За 30–60 минут до начала <strong>примите душ, наденьте чистое</strong>, воздержитесь от тяжёлой пищи.',
-    zt4: 'В момент проведения <strong>находитесь в тихом месте</strong>, удерживайте своё намерение и мысли о ягье.',
-    zt5: 'Можно <strong>зажечь свечу или благовония</strong>, прочитать мантру — это углубляет связь с практикой.',
-    zt6: 'После завершения <strong>сохраняйте спокойствие</strong> — не спешите сразу возвращаться к привычной суете.',
-    zt7: 'Фото- или видеоотчёт вы получите <strong>в соответствии с вашим форматом участия</strong>.',
-    zaochna_note: 'По дополнительным вопросам — в канал: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_title: 'РЕКОМЕНДАЦИИ ДЛЯ ЗАОЧНОГО УЧАСТИЯ В ЯГЬЕ',
+    zaochna_body: '<p class="z-join">☝️ Перед участием обязательно вступите в группу Kailash Dham! <a href="https://t.me/kailas_dham" target="_blank" class="z-link">ссылка</a></p><p class="z-p">В группе публикуются сообщения о начале и завершении ягьи, а также фото- и видеоотчёты после проведения практики.</p><p class="z-p">Также в канале публикуется расписание мероприятий и другая полезная информация.</p><p class="z-intro">Существует несколько уровней включения в процесс заочного участия:</p><div class="z-level"><div class="z-lnum">1</div><div class="z-ltext"><p class="z-lhead">Если вы заняты или не имеете возможности быть включёнными в процесс.</p><p>В таком случае вы мысленно с нами, а все действия во время ягьи выполняются пуджари от вашего имени.</p></div></div><div class="z-level"><div class="z-lnum">2</div><div class="z-ltext"><p class="z-lhead">Если вы знакомы с ведической или восточной традицией.</p><p>Во время проведения ягьи вы можете самостоятельно читать мантру и удерживать внимание на своей санкальпе.</p></div></div><div class="z-level"><div class="z-lnum">3</div><div class="z-ltext"><p class="z-lhead">Для более глубокого включения в процесс.</p><p>Накануне ягьи рекомендуется посильный пост.</p><p>Перед началом желательно:</p><ul class="z-list"><li>принять душ;</li><li>надеть чистую одежду;</li><li>подготовить чистое и спокойное пространство;</li><li>по желанию зажечь благовония или светильник.</li></ul><p>После сообщения о начале ягьи:</p><ul class="z-list"><li>сосредоточьтесь на своей санкальпе;</li><li>читайте мантру;</li><li>сохраняйте спокойное и внимательное состояние.</li></ul><p>После завершения практики рекомендуется некоторое время побыть в тишине и внутренней благодарности.</p></div></div><div class="z-level"><div class="z-lnum">4</div><div class="z-ltext"><p class="z-lhead">Если у вас возникают вопросы</p><p>Вы можете задать их в чате группы Kailash Dham. <a href="https://t.me/kailas_dham" target="_blank" class="z-link">ссылка</a></p></div></div>',
     zaochna_btn: 'Подобрать ягью →',
   },
   en: {
@@ -5639,16 +5619,8 @@ const i18n = {
     pm_thanks: 'Thank you for your respect. — Kailash Dham',
     pm_report_label: 'The yagya report and accompanying information —', pm_report_link: 'Kailash Dham Telegram channel',
     pm_tg_btn: 'Telegram channel — announcements & reports',
-    zaochna_label: 'Remote participation',
-    zaochna_title: 'REMOTE<br>PARTICIPATION GUIDE',
-    zt1: '<strong>Know the exact time of the ceremony</strong> — be ready in advance.',
-    zt2: '<strong>Formulate your sankalpa</strong> — your intention in a few clear, sincere words.',
-    zt3: 'Thirty to sixty minutes before the start, <strong>shower, put on clean clothes</strong>, and avoid heavy food.',
-    zt4: 'During the ceremony, <strong>be in a quiet place</strong> and hold your intention and thoughts on the yagya.',
-    zt5: 'You may <strong>light a candle or incense</strong> and recite a mantra — this deepens your connection with the practice.',
-    zt6: 'After the ceremony, <strong>remain calm</strong> — don\'t rush back into the everyday bustle.',
-    zt7: 'A photo or video report will be sent to you <strong>according to your participation format</strong>.',
-    zaochna_note: 'For additional questions, visit the channel: <a href="https://t.me/kailas_dham" target="_blank" style="color:#c9943a;text-decoration:none">t.me/kailas_dham</a>',
+    zaochna_title: 'GUIDELINES FOR REMOTE PARTICIPATION IN YAGYA',
+    zaochna_body: '<p class="z-join">☝️ Before participating, be sure to join the Kailash Dham group! <a href="https://t.me/kailas_dham" target="_blank" class="z-link">link</a></p><p class="z-p">The group publishes announcements about the beginning and end of each yagya, as well as photo and video reports after the practice.</p><p class="z-p">The channel also features the schedule of upcoming events and other useful information.</p><p class="z-intro">There are several levels of engagement for remote participation:</p><div class="z-level"><div class="z-lnum">1</div><div class="z-ltext"><p class="z-lhead">If you are busy or unable to be actively involved in the process.</p><p>In this case, you are with us in spirit, and all actions during the yagya are performed by the pujari on your behalf.</p></div></div><div class="z-level"><div class="z-lnum">2</div><div class="z-ltext"><p class="z-lhead">If you are familiar with the Vedic or Eastern tradition.</p><p>During the yagya, you may recite a mantra independently and hold your attention on your sankalpa.</p></div></div><div class="z-level"><div class="z-lnum">3</div><div class="z-ltext"><p class="z-lhead">For deeper engagement in the process.</p><p>A light fast is recommended the day before the yagya.</p><p>Before the start, it is advisable to:</p><ul class="z-list"><li>take a shower;</li><li>put on clean clothes;</li><li>prepare a clean and quiet space;</li><li>light incense or a lamp if you wish.</li></ul><p>After the announcement that the yagya has begun:</p><ul class="z-list"><li>focus on your sankalpa;</li><li>recite a mantra;</li><li>maintain a calm and attentive state.</li></ul><p>After the practice ends, spend some time in silence and inner gratitude.</p></div></div><div class="z-level"><div class="z-lnum">4</div><div class="z-ltext"><p class="z-lhead">If you have any questions</p><p>You may ask them in the Kailash Dham group chat. <a href="https://t.me/kailas_dham" target="_blank" class="z-link">link</a></p></div></div>',
     zaochna_btn: 'Find your yagya →',
   }
 };
