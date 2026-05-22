@@ -61,6 +61,56 @@
   }
   .btn-outline:hover { border-color: #c9a96e; }
   .sub { margin-top: 12px; font-size: 13px; color: #555; }
+  .btn-home {
+    display: inline-block;
+    background: transparent;
+    color: rgba(255,255,255,.45);
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px 0;
+    transition: color .2s;
+  }
+  .btn-home:hover { color: #c9a96e; }
+
+  .site-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(10,8,6,.9) 0%, transparent 100%);
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-name {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #c9943a;
+  }
+  .logo-sub {
+    font-size: 7px;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.4);
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .header-home {
+    font-size: 12px;
+    letter-spacing: .08em;
+    color: rgba(255,255,255,.45);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  .header-home:hover { color: #c9943a; }
 
 .site-footer{background:#050403;border-top:1px solid rgba(201,148,58,.15);padding:40px 24px;margin-top:40px;width:100%}
 .footer-inner{max-width:960px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px}
@@ -75,7 +125,17 @@
 .footer-note{color:rgba(255,255,255,.2);font-size:.67rem;font-style:italic;margin-top:6px}
 </style>
 </head>
-<body>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+<header class="site-header">
+  <a href="/" class="logo-link">
+    <img src="/kailashdham-logo.png" width="40" height="40" alt="Kailash Dham" style="mix-blend-mode:screen;object-fit:contain" onerror="this.style.display='none'">
+    <div>
+      <div class="logo-name">KAILASH DHAM</div>
+      <div class="logo-sub">Space of Practices</div>
+    </div>
+  </a>
+  <a href="/" class="header-home" id="header-home">← На головну</a>
+</header>
 <div class="card">
   <div class="icon">🙏</div>
   <h1 id="title">Дякуємо за оплату!</h1>
@@ -85,6 +145,7 @@
   <div class="btn-wrap">
     <a href="/#zaochna-uchast" class="btn-outline" id="btn-tips">📋 Рекомендації щодо заочної участі</a>
     <a href="https://t.me/kailashdham_bot" class="btn" id="btn">Повернутися в бот</a>
+    <a href="/" class="btn-home" id="btn-home">← На головну</a>
   </div>
   <p class="sub" id="sub">@kailashdham_bot</p>
 </div>
@@ -101,6 +162,8 @@ const texts = {
     channel: 't.me/kailas_dham',
     btnTips: '📋 Рекомендації щодо заочної участі',
     btn: 'Повернутися в бот',
+    btnHome: '← На головну',
+    headerHome: '← На головну',
   },
   ru: {
     title: 'Спасибо за оплату!',
@@ -109,6 +172,8 @@ const texts = {
     channel: 't.me/kailas_dham',
     btnTips: '📋 Рекомендации для дистанционного участия',
     btn: 'Вернуться в бот',
+    btnHome: '← На главную',
+    headerHome: '← На главную',
   },
   en: {
     title: 'Thank you for your payment!',
@@ -117,6 +182,8 @@ const texts = {
     channel: 't.me/kailas_dham',
     btnTips: '📋 Remote participation guide',
     btn: 'Return to bot',
+    btnHome: '← Back to main',
+    headerHome: '← Back to main',
   },
 };
 const t = texts[lang] || texts.uk;
@@ -126,6 +193,8 @@ document.getElementById('line2').textContent = t.line2;
 document.getElementById('channel').textContent = t.channel;
 document.getElementById('btn-tips').textContent = t.btnTips;
 document.getElementById('btn').textContent = t.btn;
+document.getElementById('btn-home').textContent = t.btnHome;
+document.getElementById('header-home').textContent = t.headerHome;
 </script>
 
   <footer class="site-footer">
