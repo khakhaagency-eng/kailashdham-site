@@ -61,6 +61,7 @@
   .badge-horoscope { background: #2e2a1e; color: #c9a96e; }
   .badge-vip { background: #2e1e2e; color: #c96ec9; }
   .badge-book { background: #2a1e1e; color: #e07070; }
+  .badge-consult { background: #1e2a2a; color: #5dbbbb; }
 
   .empty { text-align: center; padding: 60px 20px; color: #444; }
   .loading { text-align: center; padding: 60px 20px; color: #666; }
@@ -107,6 +108,7 @@
         <option value="pkg_individual">Индивидуальная</option>
         <option value="pkg_horoscope">С гороскопом</option>
         <option value="pkg_vip">VIP</option>
+        <option value="consult">Консультации</option>
       </select>
       <button class="refresh-btn" onclick="loadData()">↻ Обновить</button>
     </div>
@@ -184,9 +186,9 @@ function renderStats() {
   let statsHtml = `<div class="stat"><div class="stat-val">${total}</div><div class="stat-label">Всего заявок</div></div>`;
 
   if (currentTab === 'orders') {
-    const pkgs = { pkg_group: 0, pkg_individual: 0, pkg_horoscope: 0, pkg_vip: 0 };
+    const pkgs = { pkg_group: 0, pkg_individual: 0, pkg_horoscope: 0, pkg_vip: 0, consult: 0 };
     allData.forEach(r => { if (pkgs[r.pkg_id] !== undefined) pkgs[r.pkg_id]++; });
-    const labels = { pkg_group: 'Групповых', pkg_individual: 'Индивид.', pkg_horoscope: 'Гороскоп', pkg_vip: 'VIP' };
+    const labels = { pkg_group: 'Групповых', pkg_individual: 'Индивид.', pkg_horoscope: 'Гороскоп', pkg_vip: 'VIP', consult: 'Консультаций' };
     Object.entries(pkgs).forEach(([k, v]) => {
       statsHtml += `<div class="stat"><div class="stat-val">${v}</div><div class="stat-label">${labels[k]}</div></div>`;
     });
@@ -201,6 +203,7 @@ const PKG_LABELS = {
   pkg_individual: ['Индивидуальная', 'badge-individual'],
   pkg_horoscope: ['С гороскопом', 'badge-horoscope'],
   pkg_vip: ['VIP', 'badge-vip'],
+  consult: ['Консультация', 'badge-consult'],
 };
 
 function formatDate(iso) {
